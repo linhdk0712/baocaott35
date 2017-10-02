@@ -1,0 +1,447 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head><link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Header,0:HeaderFooterSprite,0:Header.NonMtps;/Areas/Centers/Themes/StandardDevCenter/Content:0&amp;amp;v=0F22413366F5977978C46D94D86B40A8" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+<link rel="stylesheet" type="text/css" href="https://i-msdn.sec.s-msft.com/Combined.css?resources=0:Footer,0:HeaderFooterSprite,0:Footer.NonMtps,1:NewFooterSock,1:LinkList;/Areas/Centers/Themes/StandardDevCenter/Content:0,/Areas/Epx/Themes/Base/Content:1&amp;amp;v=BA54336BC791F42AE754C419920C1AAE" xmlns="http://www.w3.org/1999/xhtml" />
+<link type="text/css" rel="stylesheet" xmlns="http://www.w3.org/1999/xhtml" />
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>ASP.NET File Manager</title>
+        <link href="description/Galleries.css" type="text/css" rel="Stylesheet" /><link href="description/Layout.css" type="text/css" rel="Stylesheet" /><link href="description/Brand.css" type="text/css" rel="Stylesheet" />
+        <link href="https://i1.code.msdn.s-msft.com/content/common/iframedescription.css" rel="Stylesheet" type="text/css" />
+        <script src="https://i1.code.msdn.s-msft.com/content/common/offline.js" type="text/javascript"></script>
+        <style type="text/css">
+            #projectInfo {
+                overflow: auto;
+            }
+            #longDesc {
+                clear:both;
+                margin: 25px 0 10px 0;
+            }
+
+            #SampleIndexList{
+                margin-left: 15px;
+            }
+        </style>
+    </head>
+<body>
+    <div id="offlineDescription">
+        <h1>ASP.NET File Manager</h1>
+        <br/>
+        <div id="projectInfo">
+            <div class="section">
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Technologies">Technologies</label>
+                        <div id="Technologies">
+                            ASP.NET
+                        </div>
+                    </div>
+                    <div class="itemBarLong tagsContainer">
+                        <label for="Topics">Topics</label>
+                        <div id="Topics">
+                            asp.net file manager
+                        </div>
+                    </div>
+                <div class="itemBarLong">
+                    <label for="Platforms">Platforms</label>
+                    <div id="Platforms">
+                        Web
+                    </div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="Requirements">Requirements</label>
+                    <div id="Requirements">
+                        
+                    </div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Primary language</label>
+                    <div id="LastUpdated">en-US</div>
+                </div>
+                <div class="itemBar">
+                    <label for="LastUpdated">Updated</label>
+                    <div id="LastUpdated">6/19/2017</div>
+                </div>
+                <div class="itemBarLong">
+                    <label for="License">License</label>
+                    <div id="License">
+                        <a href="license.rtf">MIT</a></div>
+                </div>
+                <div class="itemBar">
+                    <div class="viewonlinecont">
+                        <a data-link="online" href="https://code.msdn.microsoft.com/ASPNET-File-Manager-dd9ffc0d">View this sample online</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+                   
+<script type="text/javascript">
+    function initializePage() {
+        var otherTabClass = 'otherTab';
+        var hiddenPreClass = 'hidden';
+
+        var htmlDecode = function(encodedData) {
+            var decodedData = "";
+            if (encodedData) {
+                var div = document.createElement('div');
+                div.innerHTML = encodedData;
+                decodedData = div.firstChild.nodeValue.replace( /\\r\\n/ig , '\r\n');
+            }
+            return decodedData;
+        };
+                
+        Galleries.iterateElem(Galleries.findElem(null, 'div', 'scriptcode'), function (index, scriptBlock) {
+            var titleElem = Galleries.findElem(scriptBlock, 'div', 'title')[0];
+            var labelElems = Galleries.findElem(titleElem, 'span');
+            if (labelElems.length == 0) {
+                labelElems = titleElem;
+            }
+            var languageSpans = Galleries.findElem(scriptBlock, 'span', 'hidden');
+            var pres = Galleries.findElem(scriptBlock, 'pre');
+            if (languageSpans.length > 0 && pres.length > 1) {
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    var languageSpan = languageSpans[index];
+                            
+                    elem.code = codePre.innerHTML.replace( /(\r(\n)?)|((\r)?\n)/ig , '\\r\\n');
+                            
+                    codePre.className = codePre.className.replace(hiddenPreClass, '');
+                            
+                    languageSpan.parentNode.removeChild(languageSpan);
+                });
+
+                pres = Galleries.findElem(scriptBlock, 'pre');
+                Galleries.iterateElem(labelElems, function(index, elem) {
+                    var codePre = pres[index];
+                    var labelSpan = elem;
+                    if (index == 0) {
+                        scriptBlock.activeTab = 0;
+                    }
+                    else {
+                        labelSpan.className += otherTabClass;
+                        codePre.className += hiddenPreClass;
+                    }
+                    Galleries.attachEventHandler(labelSpan, 'click', function(e) {
+                        var activeTab = scriptBlock.activeTab;
+                        labelElems[activeTab].className += otherTabClass;
+                        pres[activeTab].className += hiddenPreClass;
+
+                        codePre.className = codePre.className.replace(hiddenPreClass, '');
+                        labelSpan.className = labelSpan.className.replace(otherTabClass, '');
+                        scriptBlock.activeTab = index;
+                    });
+                });
+
+                var preview = Galleries.findElem(scriptBlock, 'div', 'preview');
+                if (preview.length == 0) {
+                    preview.push(pres[pres.length - 1]);
+                }
+                Galleries.iterateElem(preview, function(index, elem) {
+                    elem.parentNode.removeChild(elem);
+                });
+
+                if (window.clipboardData && clipboardData.setData) {
+                    var copyLink = document.createElement('a');
+                    copyLink.href = 'javascript:void(0);';
+                    copyLink.className = 'copyCode';
+                    copyLink.innerHTML = 'Copy code';
+                    Galleries.attachEventHandler(copyLink, 'click', function (e) {
+                        clipboardData.setData("Text", htmlDecode(labelElems[scriptBlock.activeTab].code));
+                        return false;
+                    });
+                    scriptBlock.insertBefore(copyLink, scriptBlock.childNodes[0]);
+                }
+            }
+        });
+    }
+
+    Galleries.onWindowLoad(function(){
+        initializePage();
+    });
+
+</script>
+<div id="longDesc">
+    
+<h1>FileUltimate: ASP.NET File Manager</h1>
+<p>File Manager Control for ASP.NET WebForms and ASP.NET MVC 3&#43; (.NET Framework 4.0&#43;).</p>
+<p>Integrate a file manager into your ASP.NET application or site rapidly.&nbsp;</p>
+<ul>
+<li>Browse and manage files with access control.&nbsp; </li><li>Accept files with the advanced upload functionality. </li><li>Offer a structured and neat download area. </li><li>Preview documents (70&#43; file formats, including PDF &amp; Microsoft Office), images, audios and videos.
+</li></ul>
+<p><img id="153279" src="description/asp-net-file-manager.png" alt="" width="736" height="590"></p>
+<p><strong>Note:</strong> This project&nbsp;contains a fully working version of the product, however without a license key it will run in trial mode. For more information, please see&nbsp;<a href="http://www.gleamtech.com/fileultimate">FileUltimate: ASP.NET
+ File Manager</a>&nbsp;product page.</p>
+<div>
+<h3>To use FileUltimate in an ASP.NET MVC Project, do the following in Visual Studio:</h3>
+<div>
+<ol>
+<li>
+<div>Add references to FileUltimate assemblies. There are two ways to perform this:</div>
+<ul>
+<li>
+<div>Add reference to <strong>GleamTech.Core.dll</strong> and <strong>GleamTech.FileUltimate.dll</strong> found in &quot;Bin&quot; folder of FileUltimate-vX.X.X.X.zip package which you already downloaded and extracted.<br>
+&nbsp;
+<blockquote><em>The other DLLs in the same folder, i.e. <strong>GleamTech.ImageUltimate.dll</strong>,
+<strong>GleamTech.VideoUltimate.dll</strong> and <strong>GleamTech.DocumentUltimate.dll</strong> are assemblies that FileUltimate depends on for some of the features. They are separate assemblies as they are also standalone products with the same names. MSbuild
+ or Visual Studio will automatically copy these 3 DLLs along with the main referenced assembly
+<strong>GleamTech.FileUltimate.dll</strong> to your bin folder during build so they don't need to be referenced directly (unless you are using these products separately in the same project and you have a license for them). Note that even without these 3 DLLs,
+ FileUltimate will work but it will just turn off the corresponding features such as generating image or video thumbnails or the document viewer. So with this modular approach, you can opt-out of the features you do not need by excluding the corresponding DLL,
+ i.e. MSBuild or Visual Studio would automatically copy a dependency only if that DLL is found in the same folder as the main referenced DLL so you can simply delete/move a DLL to opt-out.</em></blockquote>
+</div>
+</li><li>
+<p>Or install NuGet package and add references automatically via NuGet Package Manager in Visual Studio: Go to<strong>
+<span class="ui">Tools -&gt; NuGet Package Manager -&gt; Package Manager Console</span></strong> and run this command:</p>
+<pre><span class="command">Install-Package FileUltimate -Source https://get.gleamtech.com/nuget/default/ </span></pre>
+<p>If you prefer using the user interface when working with NuGet, you can also install the package this way:</p>
+<ol>
+<li>
+<p>GleamTech has its own NuGet feed so first you need to add this feed to be able to find GleamTech's packages. Go to
+<strong><span class="ui">Tools -&gt; NuGet Package Manager -&gt; Package Manager Settings</span></strong> and then click the
+<strong><span class="ui">&#43;</span></strong> button to add a new package source. Enter
+<em><span class="command">GleamTech</span></em> in <strong><span class="ui">Name</span></strong> field and
+<em><span class="command">https://get.gleamtech.com/nuget/default/</span></em> in
+<span class="ui">Source</span> field and click <strong>OK</strong>.</p>
+</li><li>
+<p>Go to <strong><span class="ui">Tools -&gt; NuGet Package Manager -&gt; Manage NuGet Packages for Solution</span></strong>, select
+<em><span class="command">GleamTech</span></em> or <em><span class="command">All</span></em> in the
+<span class="ui">Package source</span> dropdown on the top right. Now enter <em>
+FileUltimate</em> in the search field, and click <strong><span class="ui">Install</span></strong> button on the found package.</p>
+</li></ol>
+</li></ul>
+</li><li>
+<div>Set FileUltimate's global configuration. For example, you may want to set the license key. Insert some of the following lines (if overriding a default value is required) into the
+<span style="color:#000066">Application_Start</span> method of your <strong>Global.asax.cs</strong>:</div>
+<div>
+<div>
+<div id="ID0EADABABAAA_tab1">&nbsp;</div>
+<div>
+<pre style="font-family:Consolas; font-size:13; color:black; background:white"><span style="color:green">//Set&nbsp;this&nbsp;property&nbsp;only&nbsp;if&nbsp;you&nbsp;have&nbsp;a&nbsp;valid&nbsp;license&nbsp;key,&nbsp;otherwise&nbsp;do&nbsp;not&nbsp;</span>
+<span style="color:green">//set&nbsp;it&nbsp;so&nbsp;FileUltimate&nbsp;runs&nbsp;in&nbsp;trial&nbsp;mode.&nbsp;&nbsp;</span>
+<span style="color:#2b91af">FileUltimateConfiguration</span>.Current.LicenseKey&nbsp;=&nbsp;<span style="color:#a31515">&quot;QQJDJLJP34...&quot;</span>;
+</pre>
+<div>Alternatively you can specify the configuration in <span style="color:#000066">
+&lt;appSettings&gt;</span> tag of your Web.config.</div>
+</div>
+</div>
+</div>
+<div>
+<div>&nbsp;</div>
+<div>
+<pre style="font-family:Consolas; font-size:13; color:black; background:white"><span style="color:blue">&lt;</span><span style="color:#a31515">appSettings</span><span style="color:blue">&gt;&nbsp;</span>
+<span style="color:blue">&nbsp;&nbsp;&lt;</span><span style="color:#a31515">add</span><span style="color:blue">&nbsp;</span><span style="color:red">key</span><span style="color:blue">=</span>&quot;<span style="color:blue">FileUltimate:LicenseKey</span>&quot;<span style="color:blue">&nbsp;</span><span style="color:red">value</span><span style="color:blue">=</span>&quot;<span style="color:blue">QQJDJLJP34...</span>&quot;<span style="color:blue">&nbsp;/&gt;&nbsp;</span>
+<span style="color:blue">&lt;/</span><span style="color:#a31515">appSettings</span><span style="color:blue">&gt;</span></pre>
+<div>As you would notice, <span style="color:#000066">FileUltimate:</span> prefix maps to
+<span style="color:#000066">FileUltimateConfiguration.Current</span>.</div>
+</div>
+</div>
+</li><li>
+<div>Open one of your View pages (eg. Index.cshtml) and at the top of your page add the necessary namespaces:</div>
+<div>
+<div>
+<div id="ID0EAFAAABAAA_tab1">&nbsp;</div>
+</div>
+<div>
+<div id="ID0EAFAAABAAA_code_Div1">
+<pre style="font-family:Consolas; font-size:13; color:black; background:white"><span style="background:yellow">@</span><span style="color:blue">using</span>&nbsp;GleamTech.Web.Mvc
+<span style="background:yellow">@</span><span style="color:blue">using</span>&nbsp;GleamTech.FileUltimate</pre>
+</div>
+</div>
+</div>
+<div>Alternatively you can add the namespaces globally in <strong>Views/web.config</strong> to avoid adding namespaces in your pages every time:</div>
+<div>
+<div>&nbsp;</div>
+<div id="ID0EADAAABAAA_code_Div1">
+<pre style="font-family:Consolas; font-size:13; color:black; background:white"><span style="color:blue">&nbsp;&nbsp;&lt;</span><span style="color:#a31515"><a class="libraryLink" href="https://code.msdn.microsoft.com/ASPNET-File-Manager-dd9ffc0d/https://code.msdn.microsoft.com/ASPNET-File-Manager-dd9ffc0d/https://msdn.microsoft.com/en-US/library/system.web.webPages.razor.aspx"  title="Auto generated link to system.web.webPages.razor">system.web.webPages.razor</a></span><span style="color:blue">&gt;</span>
+<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515">pages</span><span style="color:blue">&nbsp;</span><span style="color:red">pageBaseType</span><span style="color:blue">=</span>&quot;<span style="color:blue"><a class="libraryLink" href="https://code.msdn.microsoft.com/ASPNET-File-Manager-dd9ffc0d/https://msdn.microsoft.com/en-US/library/System.Web.Mvc.WebViewPage.aspx"  title="Auto generated link to System.Web.Mvc.WebViewPage">System.Web.Mvc.WebViewPage</a></span>&quot;<span style="color:blue">&gt;</span>
+<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515">namespaces</span><span style="color:blue">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.
+<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515">add</span><span style="color:blue">&nbsp;</span><span style="color:red">namespace</span><span style="color:blue">=</span>&quot;<span style="color:blue">GleamTech.Web.Mvc</span>&quot;<span style="color:blue">&nbsp;/&gt;</span>
+<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515">add</span><span style="color:blue">&nbsp;</span><span style="color:red">namespace</span><span style="color:blue">=</span>&quot;<span style="color:blue">GleamTech.FileUltimate</span>&quot;<span style="color:blue">&nbsp;/&gt;</span>
+<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/</span><span style="color:#a31515">namespaces</span><span style="color:blue">&gt;</span>
+<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/</span><span style="color:#a31515">pages</span><span style="color:blue">&gt;</span>
+<span style="color:blue">&nbsp;&nbsp;&lt;/</span><span style="color:#a31515"><a class="libraryLink" href="https://code.msdn.microsoft.com/ASPNET-File-Manager-dd9ffc0d/https://code.msdn.microsoft.com/ASPNET-File-Manager-dd9ffc0d/https://msdn.microsoft.com/en-US/library/system.web.webPages.razor.aspx"  title="Auto generated link to system.web.webPages.razor">system.web.webPages.razor</a></span><span style="color:blue">&gt;</span>
+</pre>
+</div>
+</div>
+<div>Now in your page insert these lines:
+<pre style="font-family:Consolas; font-size:13; color:black; background:white"><span style="background:yellow">@{</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">var</span>&nbsp;fileManager&nbsp;=&nbsp;<span style="color:blue">new</span>&nbsp;<span style="color:#2b91af">FileManager</span>
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Width&nbsp;=&nbsp;800,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Height&nbsp;=&nbsp;600,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Resizable&nbsp;=&nbsp;<span style="color:blue">true</span>
+&nbsp;&nbsp;&nbsp;&nbsp;};
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">var</span>&nbsp;rootFolder&nbsp;=&nbsp;<span style="color:blue">new</span>&nbsp;<span style="color:#2b91af">FileManagerRootFolder</span>
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Name&nbsp;=&nbsp;<span style="color:#a31515">&quot;A&nbsp;Root&nbsp;Folder&quot;</span>,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Location&nbsp;=&nbsp;<span style="color:#a31515">&quot;~/App_Data/RootFolder1&quot;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;};
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;rootFolder.AccessControls.Add(<span style="color:blue">new</span>&nbsp;<span style="color:#2b91af">FileManagerAccessControl</span>
+&nbsp;&nbsp;&nbsp;&nbsp;{
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Path&nbsp;=&nbsp;<span style="color:maroon">@&quot;\&quot;</span>,
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AllowedPermissions&nbsp;=&nbsp;<span style="color:#2b91af">FileManagerPermissions</span>.Full
+&nbsp;&nbsp;&nbsp;&nbsp;});
+ 
+&nbsp;&nbsp;&nbsp;&nbsp;fileManager.RootFolders.Add(rootFolder);
+<span style="background:yellow">}</span>
+<span style="color:blue">&lt;</span><span style="color:maroon">html</span><span style="color:blue">&gt;</span>
+<span style="color:blue">&lt;</span><span style="color:maroon">head</span><span style="color:blue">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="background:yellow">@</span>Html.RenderCss(fileManager)
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="background:yellow">@</span>Html.RenderJs(fileManager)
+<span style="color:blue">&lt;/</span><span style="color:maroon">head</span><span style="color:blue">&gt;</span>
+<span style="color:blue">&lt;</span><span style="color:maroon">body</span><span style="color:blue">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="background:yellow">@</span>Html.RenderControl(fileManager)
+<span style="color:blue">&lt;/</span><span style="color:maroon">body</span><span style="color:blue">&gt;</span>
+<span style="color:blue">&lt;/</span><span style="color:maroon">html</span><span style="color:blue">&gt;</span></pre>
+<div>This will render a file manager control in the page which displays one root folder named &quot;A Root Folder&quot; which points to &quot;~/App_Data/RootFolder1&quot; with Full permissions.</div>
+</div>
+</li></ol>
+<h3><br>
+To use FileUltimate in an ASP.NET WebForms Project, do the following in Visual Studio:</h3>
+<div>
+<ol>
+<li>
+<div>Add references to FileUltimate assemblies. There are two ways to perform this:</div>
+<ul>
+<li>
+<div>Add reference to <strong>GleamTech.Core.dll</strong> and <strong>GleamTech.FileUltimate.dll</strong> found in &quot;Bin&quot; folder of FileUltimate-vX.X.X.X.zip package which you already downloaded and extracted.<br>
+&nbsp;
+<blockquote><em>The other DLLs in the same folder, i.e. <strong>GleamTech.ImageUltimate.dll</strong>,
+<strong>GleamTech.VideoUltimate.dll</strong> and <strong>GleamTech.DocumentUltimate.dll</strong> are assemblies that FileUltimate depends on for some of the features. They are separate assemblies as they are also standalone products with the same names. MSbuild
+ or Visual Studio will automatically copy these 3 DLLs along with the main referenced assembly
+<strong>GleamTech.FileUltimate.dll</strong> to your bin folder during build so they don't need to be referenced directly (unless you are using these products separately in the same project and you have a license for them). Note that even without these 3 DLLs,
+ FileUltimate will work but it will just turn off the corresponding features such as generating image or video thumbnails or the document viewer. So with this modular approach, you can opt-out of the features you do not need by excluding the corresponding DLL,
+ i.e. MSBuild or Visual Studio would automatically copy a dependency only if that DLL is found in the same folder as the main referenced DLL so you can simply delete/move a DLL to opt-out.</em></blockquote>
+</div>
+</li><li>
+<p>Or install NuGet package and add references automatically via NuGet Package Manager in Visual Studio: Go to<strong>
+<span class="ui">Tools -&gt; NuGet Package Manager -&gt; Package Manager Console</span></strong> and run this command:</p>
+<pre><span class="command">Install-Package FileUltimate -Source https://get.gleamtech.com/nuget/default/ </span></pre>
+<p>If you prefer using the user interface when working with NuGet, you can also install the package this way:</p>
+<ol>
+<li>
+<p>GleamTech has its own NuGet feed so first you need to add this feed to be able to find GleamTech's packages. Go to
+<strong><span class="ui">Tools -&gt; NuGet Package Manager -&gt; Package Manager Settings</span></strong> and then click the
+<strong><span class="ui">&#43;</span></strong> button to add a new package source. Enter
+<em><span class="command">GleamTech</span></em> in <strong><span class="ui">Name</span></strong> field and
+<em><span class="command">https://get.gleamtech.com/nuget/default/</span></em> in
+<span class="ui">Source</span> field and click <strong>OK</strong>.</p>
+</li><li>
+<p>Go to <strong><span class="ui">Tools -&gt; NuGet Package Manager -&gt; Manage NuGet Packages for Solution</span></strong>, select
+<em><span class="command">GleamTech</span></em> or <em><span class="command">All</span></em> in the
+<span class="ui">Package source</span> dropdown on the top right. Now enter <em>
+FileUltimate</em> in the search field, and click <strong><span class="ui">Install</span></strong> button on the found package.</p>
+</li></ol>
+</li></ul>
+</li><li>
+<div>Set FileUltimate's global configuration. For example, you may want to set the license key. Insert some of the following lines (if overriding a default value is required) into the
+<span style="color:#000066">Application_Start</span> method of your <strong>Global.asax.cs</strong>:</div>
+<div>
+<div>
+<div id="ID0EADABABAAA_tab1">&nbsp;</div>
+<div>
+<pre style="font-family:Consolas; font-size:13; color:black; background:white"><span style="color:green">//Set&nbsp;this&nbsp;property&nbsp;only&nbsp;if&nbsp;you&nbsp;have&nbsp;a&nbsp;valid&nbsp;license&nbsp;key,&nbsp;otherwise&nbsp;do&nbsp;not&nbsp;</span>
+<span style="color:green">//set&nbsp;it&nbsp;so&nbsp;FileUltimate&nbsp;runs&nbsp;in&nbsp;trial&nbsp;mode.&nbsp;&nbsp;</span>
+<span style="color:#2b91af">FileUltimateConfiguration</span>.Current.LicenseKey&nbsp;=&nbsp;<span style="color:#a31515">&quot;QQJDJLJP34...&quot;</span>;
+</pre>
+<div>Alternatively you can specify the configuration in <span style="color:#000066">
+&lt;appSettings&gt;</span> tag of your Web.config.</div>
+</div>
+</div>
+</div>
+<div>
+<div>&nbsp;</div>
+<div>
+<pre style="font-family:Consolas; font-size:13; color:black; background:white"><span style="color:blue">&lt;</span><span style="color:#a31515">appSettings</span><span style="color:blue">&gt;&nbsp;</span>
+<span style="color:blue">&nbsp;&nbsp;&lt;</span><span style="color:#a31515">add</span><span style="color:blue">&nbsp;</span><span style="color:red">key</span><span style="color:blue">=</span>&quot;<span style="color:blue">FileUltimate:LicenseKey</span>&quot;<span style="color:blue">&nbsp;</span><span style="color:red">value</span><span style="color:blue">=</span>&quot;<span style="color:blue">QQJDJLJP34...</span>&quot;<span style="color:blue">&nbsp;/&gt;&nbsp;</span>
+<span style="color:blue">&lt;/</span><span style="color:#a31515">appSettings</span><span style="color:blue">&gt;</span></pre>
+<div>As you would notice, <span style="color:#000066">FileUltimate:</span> prefix maps to
+<span style="color:#000066">FileUltimateConfiguration.Current</span>.</div>
+</div>
+</div>
+</li><li>
+<div>Open one of your pages (eg. Default.aspx) and at the top of your page add add the necessary namespaces:</div>
+<div>
+<div>
+<div id="ID0EAFAAABAAA_tab1">&nbsp;</div>
+</div>
+<div>
+<div id="ID0EAFAAABAAA_code_Div1">
+<pre style="font-family:Consolas; font-size:13; color:black; background:white"><span style="background:yellow">&lt;%</span><span style="color:blue">@</span>&nbsp;<span style="color:maroon">Register</span>&nbsp;<span style="color:red">TagPrefix</span><span style="color:blue">=</span><span style="color:blue">&quot;GleamTech&quot;</span>&nbsp;<span style="color:red">Namespace</span><span style="color:blue">=</span><span style="color:blue">&quot;GleamTech.FileUltimate&quot;</span>&nbsp;<span style="color:red">Assembly</span><span style="color:blue">=</span><span style="color:blue">&quot;GleamTech.FileUltimate&quot;</span>&nbsp;<span style="background:yellow">%&gt;</span>
+</pre>
+</div>
+</div>
+</div>
+<div>Alternatively you can add the namespaces globally in&nbsp;<strong>Web.config</strong>&nbsp;to avoid adding namespaces in your pages every time:</div>
+<div>
+<div>&nbsp;</div>
+<div id="ID0EADAAABAAA_code_Div1">
+<pre style="font-family:Consolas; font-size:13; color:black; background:white"><span style="color:blue">&nbsp;&nbsp;&lt;</span><span style="color:#a31515"><a class="libraryLink" href="https://code.msdn.microsoft.com/ASPNET-File-Manager-dd9ffc0d/https://code.msdn.microsoft.com/ASPNET-File-Manager-dd9ffc0d/https://code.msdn.microsoft.com/ASPNET-File-Manager-dd9ffc0d/https://code.msdn.microsoft.com/ASPNET-File-Manager-dd9ffc0d/https://msdn.microsoft.com/en-US/library/system.web.aspx"  title="Auto generated link to system.web">system.web</a></span><span style="color:blue">&gt;</span>
+<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515">pages</span><span style="color:blue">&gt;</span>
+<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515">controls</span><span style="color:blue">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.
+<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515">add</span><span style="color:blue">&nbsp;</span><span style="color:red">tagPrefix</span><span style="color:blue">=</span>&quot;<span style="color:blue">GleamTech</span>&quot;<span style="color:blue">&nbsp;</span><span style="color:red">namespace</span><span style="color:blue">=</span>&quot;<span style="color:blue">GleamTech.FileUltimate</span>&quot;<span style="color:blue">&nbsp;</span><span style="color:red">assembly</span><span style="color:blue">=</span>&quot;<span style="color:blue">GleamTech.FileUltimate</span>&quot;<span style="color:blue">&nbsp;/&gt;</span>
+<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/</span><span style="color:#a31515">controls</span><span style="color:blue">&gt;</span>
+<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/</span><span style="color:#a31515">pages</span><span style="color:blue">&gt;</span>
+<span style="color:blue">&nbsp;&nbsp;&lt;/</span><span style="color:#a31515"><a class="libraryLink" href="https://code.msdn.microsoft.com/ASPNET-File-Manager-dd9ffc0d/https://code.msdn.microsoft.com/ASPNET-File-Manager-dd9ffc0d/https://code.msdn.microsoft.com/ASPNET-File-Manager-dd9ffc0d/https://code.msdn.microsoft.com/ASPNET-File-Manager-dd9ffc0d/https://msdn.microsoft.com/en-US/library/system.web.aspx"  title="Auto generated link to system.web">system.web</a></span><span style="color:blue">&gt;</span></pre>
+</div>
+</div>
+<div>Now in your page insert these lines:
+<pre style="font-family:Consolas; font-size:13; color:black; background:white"><span style="color:blue">&lt;</span><span style="color:maroon">GleamTech</span><span style="color:blue">:</span><span style="color:maroon">FileManager</span>&nbsp;<span style="color:red">ID</span><span style="color:blue">=</span><span style="color:blue">&quot;fileManager&quot;</span>&nbsp;<span style="color:red">runat</span><span style="color:blue">=</span><span style="color:blue">&quot;server&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red">Width</span><span style="color:blue">=</span><span style="color:blue">&quot;800&quot;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red">Height</span><span style="color:blue">=</span><span style="color:blue">&quot;600&quot;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:red">Resizable</span><span style="color:blue">=</span><span style="color:blue">&quot;True&quot;</span><span style="color:blue">&gt;</span>
+&nbsp;&nbsp;&nbsp;&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">&lt;</span><span style="color:maroon">GleamTech</span><span style="color:blue">:</span><span style="color:maroon">FileManagerRootFolder</span>&nbsp;<span style="color:red">Name</span><span style="color:blue">=</span><span style="color:blue">&quot;A&nbsp;Root&nbsp;Folder&quot;</span>&nbsp;<span style="color:red">Location</span><span style="color:blue">=</span><span style="color:blue">&quot;~/App_Data/RootFolder1&quot;</span>&nbsp;<span style="color:blue">&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">&lt;</span><span style="color:maroon">GleamTech</span><span style="color:blue">:</span><span style="color:maroon">FileManagerAccessControl</span>&nbsp;<span style="color:red">Path</span><span style="color:blue">=</span><span style="color:blue">&quot;\&quot;</span>&nbsp;<span style="color:red">AllowedPermissions</span><span style="color:blue">=</span><span style="color:blue">&quot;Full&quot;</span><span style="color:blue">/&gt;</span>&nbsp;
+&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:blue">&lt;/</span><span style="color:maroon">GleamTech</span><span style="color:blue">:</span><span style="color:maroon">FileManagerRootFolder</span><span style="color:blue">&gt;</span>
+ 
+<span style="color:blue">&lt;/</span><span style="color:maroon">GleamTech</span><span style="color:blue">:</span><span style="color:maroon">FileManager</span><span style="color:blue">&gt;</span>&nbsp;</pre>
+<div>This will render a file manager control in the page which displays one root folder named &quot;A Root Folder&quot; which points to &quot;~/App_Data/RootFolder1&quot; with Full permissions.</div>
+</div>
+</li></ol>
+<h3>Optional:</h3>
+FileUltimate does not depend on any Web.config settings to work (it's config-free for easy deployment).&nbsp;However if you want to support the lowest level upload method Html4 which is the only possible method&nbsp;for old browsers without Html5 or Flash or
+ Silverlight support, then&nbsp;you will need to&nbsp;increase the request limits (ASP.NET's default is 4MB) so that you can upload&nbsp;files larger than 4MB on these browsers.<br>
+Edit your project's Web.config file and add the following settings inside <span style="background:#ffffff; color:#0000ff">
+&lt;</span><span style="background:#ffffff; color:#a31515">configuration</span><span style="background:#ffffff; color:#0000ff">&gt;</span> tag:<br>
+&nbsp;
+<pre style="font-family:Consolas; font-size:13; color:black; background:white"><span style="color:blue">&nbsp;&nbsp;&lt;!--</span><span style="color:green">&nbsp;</span>
+<span style="color:green">&nbsp;&nbsp;&nbsp;&nbsp;Html4&nbsp;upload&nbsp;method&nbsp;requires&nbsp;the&nbsp;limits&nbsp;to&nbsp;be&nbsp;set&nbsp;to&nbsp;the&nbsp;maximum&nbsp;value&nbsp;(2&nbsp;GB).</span>
+<span style="color:green">&nbsp;&nbsp;&nbsp;&nbsp;Other&nbsp;upload&nbsp;methods&nbsp;use&nbsp;chunking&nbsp;so&nbsp;there&nbsp;is&nbsp;no&nbsp;2GB&nbsp;limit&nbsp;for&nbsp;them.</span>
+<span style="color:green">&nbsp;&nbsp;</span><span style="color:blue">--&gt;</span>
+<span style="color:blue">&nbsp;&nbsp;</span><span style="color:blue">&lt;</span><span style="color:#a31515">location</span><span style="color:blue">&nbsp;</span><span style="color:red">path</span><span style="color:blue">=</span>&quot;<span style="color:blue">fileuploader.ashx</span>&quot;<span style="color:blue">&gt;</span>
+<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515">system.webServer</span><span style="color:blue">&gt;</span>
+<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515">security</span><span style="color:blue">&gt;</span>
+<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515">requestFiltering</span><span style="color:blue">&gt;</span>
+<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--</span><span style="color:green">&nbsp;</span>
+<span style="color:green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Maximum&nbsp;value&nbsp;for&nbsp;maxAllowedContentLength&nbsp;(in&nbsp;bytes)&nbsp;is&nbsp;2147483648&nbsp;(2GB).&nbsp;</span>
+<span style="color:green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;maxAllowedContentLength&nbsp;should&nbsp;be&nbsp;always&nbsp;equal&nbsp;to&nbsp;(or&nbsp;greater&nbsp;than)&nbsp;maxRequestLength&nbsp;x&nbsp;1024.</span>
+<span style="color:green">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="color:blue">--&gt;</span>
+<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515">requestLimits</span><span style="color:blue">&nbsp;</span><span style="color:red">maxAllowedContentLength</span><span style="color:blue">=</span>&quot;<span style="color:blue">2147483648</span>&quot;<span style="color:blue">/&gt;</span>
+<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/</span><span style="color:#a31515">requestFiltering</span><span style="color:blue">&gt;</span>
+<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;/</span><span style="color:#a31515">security</span><span style="color:blue">&gt;</span>
+<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/</span><span style="color:#a31515">system.webServer</span><span style="color:blue">&gt;</span>
+<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515"><a class="libraryLink" href="https://code.msdn.microsoft.com/ASPNET-File-Manager-dd9ffc0d/https://code.msdn.microsoft.com/ASPNET-File-Manager-dd9ffc0d/https://code.msdn.microsoft.com/ASPNET-File-Manager-dd9ffc0d/https://code.msdn.microsoft.com/ASPNET-File-Manager-dd9ffc0d/https://msdn.microsoft.com/en-US/library/system.web.aspx"  title="Auto generated link to system.web">system.web</a></span><span style="color:blue">&gt;</span>
+<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;!--</span><span style="color:green">&nbsp;Maximum&nbsp;value&nbsp;for&nbsp;maxRequestLength&nbsp;(in&nbsp;kilobytes)&nbsp;is&nbsp;2097152&nbsp;(2GB)&nbsp;</span><span style="color:blue">--&gt;</span>
+<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;</span><span style="color:#a31515">httpRuntime</span><span style="color:blue">&nbsp;</span><span style="color:red">maxRequestLength</span><span style="color:blue">=</span>&quot;<span style="color:blue">2097152</span>&quot;<span style="color:blue">/&gt;</span>
+<span style="color:blue">&nbsp;&nbsp;&nbsp;&nbsp;&lt;/</span><span style="color:#a31515"><a class="libraryLink" href="https://code.msdn.microsoft.com/ASPNET-File-Manager-dd9ffc0d/https://code.msdn.microsoft.com/ASPNET-File-Manager-dd9ffc0d/https://code.msdn.microsoft.com/ASPNET-File-Manager-dd9ffc0d/https://code.msdn.microsoft.com/ASPNET-File-Manager-dd9ffc0d/https://msdn.microsoft.com/en-US/library/system.web.aspx"  title="Auto generated link to system.web">system.web</a></span><span style="color:blue">&gt;</span>
+<span style="color:blue">&nbsp;&nbsp;&lt;/</span><span style="color:#a31515">location</span><span style="color:blue">&gt;</span></pre>
+</div>
+</div>
+</div>
+
+</div>
+
+
+    </div>
+</body>
+</html>

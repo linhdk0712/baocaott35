@@ -1,0 +1,28 @@
+﻿<Window xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ReportWpfApplication"
+        xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" x:Class="ReportWpfApplication.A00024 "
+        mc:Ignorable="d"
+        Title="Báo cáo huy động vốn từ khách hàng theo loại hình sản phẩm" Height="600" Width="1200" Loaded="Window_Loaded" Icon="1496317296_12.ico" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen">
+
+    <dxlc:LayoutControl  Orientation="Vertical">
+        <dxlc:LayoutGroup Header="Input Informations" View="GroupBox" VerticalAlignment="Top">
+            <Label Margin="10" Content="Đơn vị phát sinh dữ liệu :"></Label>
+            <ComboBox Margin="10" Name="cbxDviPsinhDLieu" IsReadOnly="True" HorizontalAlignment="Left" />
+            <Label Margin="10" Content="Ngày phát sinh dữ liệu :"></Label>
+            <DatePicker Margin="10" Name="dateNgayPSinhDLieu"></DatePicker>
+            <Button Margin="10" Name="btnGetData" Click="btnGetData_Click"  >Lấy dữ liệu</Button>
+            <Button Margin="10" Name="btnCreateReport" Click="btnCreateReport_Click"  >Tạo báo cáo</Button>
+        </dxlc:LayoutGroup>
+        <dxlc:LayoutGroup Header="LayoutGroup" View="GroupBox">
+            <dxg:GridControl Name="grdReport" AutoGenerateColumns="AddNew" SelectionMode="Row">
+                <dxg:GridControl.View>
+                    <dxg:TableView  AllowEditing="False" AllowGrouping="False" ShowGroupPanel="False" />
+                </dxg:GridControl.View>
+            </dxg:GridControl>
+        </dxlc:LayoutGroup>
+    </dxlc:LayoutControl>
+</Window>

@@ -1,0 +1,431 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ReportApplication</name>
+    </assembly>
+    <members>
+        <member name="T:ReportApplication.G01934">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:ReportApplication.G01934.ChuKyBaoCao">
+            <summary>
+            Giá trị thể hiện chu kỳ báo cáo theo ngày - 1, tháng - 2, quý - 3, năm - 4, năm đã kiểm toán - 5
+            </summary>
+        </member>
+        <member name="M:ReportApplication.G01934.#ctor">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:ReportApplication.G01934.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ReportApplication.G01934.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ReportApplication.G01934.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:ReportApplication.G01204">
+            <summary>
+            Báo cáo phân loại nợ và trích lập dự phòng rủi ro
+            </summary>
+        </member>
+        <member name="P:ReportApplication.G01204.ChuKyBaoCao">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:ReportApplication.G01204.#ctor">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:ReportApplication.G01204.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ReportApplication.G01204.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ReportApplication.G01204.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:ReportApplication.G01254.ChuKyBaoCao">
+            <summary>
+            Giá trị thể hiện chu kỳ báo cáo theo ngày - 1, tháng - 2, quý - 3, năm - 4, năm đã kiểm toán - 5
+            </summary>
+        </member>
+        <member name="M:ReportApplication.G01254.#ctor">
+            <summary>
+            Hàm khởi tạo
+            </summary>
+        </member>
+        <member name="F:ReportApplication.G01254.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ReportApplication.G01254.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ReportApplication.G01254.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:ReportApplication.G01264.ChuKyBaoCao">
+            <summary>
+            Giá trị thể hiện chu kỳ báo cáo theo ngày - 1, tháng - 2, quý - 3, năm - 4, năm đã kiểm toán - 5
+            </summary>
+        </member>
+        <member name="M:ReportApplication.G01264.#ctor">
+            <summary>
+            Hàm khởi tạo
+            </summary>
+        </member>
+        <member name="F:ReportApplication.G01264.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ReportApplication.G01264.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ReportApplication.G01264.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:ReportApplication.G01274.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ReportApplication.G01274.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ReportApplication.G01274.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:ReportApplication.G02824.#ctor">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:ReportApplication.G02824.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ReportApplication.G02824.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ReportApplication.G02824.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:ReportApplication.G02832">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="P:ReportApplication.G02832.ChuKyBaoCao">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:ReportApplication.G02832.#ctor">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="F:ReportApplication.G02832.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ReportApplication.G02832.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ReportApplication.G02832.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:ReportApplication._11_TCVM_TTGS.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ReportApplication._11_TCVM_TTGS.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ReportApplication._11_TCVM_TTGS.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:ReportApplication.Common.clsCreateFileNameReport">
+            <summary>
+            Tạo tên file báo cáo
+            </summary>
+        </member>
+        <member name="M:ReportApplication.Common.clsCreateFileNameReport.GetFileNameReportDay(System.String@,System.String@,System.String@,DevExpress.XtraEditors.RadioGroup,System.String,System.String,DevExpress.XtraEditors.DateEdit)">
+            <summary>
+            Tạo tên file báo cáo theo ngày
+            </summary>
+            <param name="ngayBaoCao"></param>
+            <param name="maDviPsinhDlieu"></param>
+            <param name="fileName"></param>
+            <param name="radioGroup1"></param>
+            <param name="maDonViGui"></param>
+            <param name="reportName"></param>
+        </member>
+        <member name="M:ReportApplication.Common.clsCreateFileNameReport.GetFileNameReportMonth(System.String@,System.String@,System.String@,DevExpress.XtraEditors.LookUpEdit,DevExpress.XtraEditors.RadioGroup,System.String,System.String,DevExpress.XtraEditors.DateEdit)">
+            <summary>
+            Tạo tên file báo cáo theo tháng
+            </summary>
+            <param name="ngayBaoCao"></param>
+            <param name="maDviPsinhDlieu"></param>
+            <param name="fileName"></param>
+            <param name="cbxDviPsinhDlieu"></param>
+            <param name="radioGroup1"></param>
+            <param name="maDonViGui"></param>
+            <param name="reportName"></param>
+        </member>
+        <member name="T:ReportApplication.Common.ClsDonViTinh">
+            <summary>
+            Xác định đơn vị tính của báo cáo
+            </summary>
+        </member>
+        <member name="M:ReportApplication.Common.ClsDonViTinh.DviTinhTrieuDong">
+            <summary>
+            Đơn vị tính là triệu Việt Nam đồng
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ReportApplication.Common.ClsDonViTinh.DviTinhNghinDong">
+            <summary>
+            Đơn vị tính là nghìn Việt Nam đồng
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ReportApplication.Common.clsGetDanhMucChiNhanh">
+            <summary>
+            Class lấy danh sách các chi nhánh
+            </summary>
+        </member>
+        <member name="M:ReportApplication.Common.clsGetDanhMucChiNhanh.GetDanMucChiNhanh(DevExpress.XtraEditors.LookUpEdit)">
+            <summary>
+            Tải danh sách các chi nhánh
+            </summary>
+            <param name="cbxDviPsinhDlieu"></param>
+        </member>
+        <member name="T:ReportApplication.Common.clsGetLastDayOfMonth">
+            <summary>
+            Class tính toán ngày trong tháng
+            </summary>
+        </member>
+        <member name="M:ReportApplication.Common.clsGetLastDayOfMonth.GetLastDayOfMonth(System.Int32)">
+            <summary>
+            Lấy ngày cuối cùng trong tháng
+            </summary>
+            <param name="iMonth"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ReportApplication.Common.clsGetLastDayOfMonth.GetFirstDayOfMont(System.Int32)">
+            <summary>
+            Lấy ngày đầu tiên trong tháng
+            </summary>
+            <param name="iMonts"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ReportApplication.Common.clsGetLastDayOfMonth.GetLastDayOfPreMont(System.Int32)">
+            <summary>
+            Lấy ngày cuối cùng của tháng trước;
+            </summary>
+            <param name="iMonth"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ReportApplication.Common.clsGetLastDayOfMonth.GetRange(System.DateTime,System.DateTime)">
+            <summary>
+            Lấy về một khoảng ngày trong tháng
+            </summary>
+            <param name="startDate"></param>
+            <param name="endDate"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ReportApplication.Common.clsMaDonViGui">
+            <summary>
+            Class lấy đơn vị gửi báo cáo TT 35
+            </summary>
+        </member>
+        <member name="M:ReportApplication.Common.clsMaDonViGui.MaDonViGui">
+            <summary>
+            Trả về đơn vị gửi dữ liệu
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:ReportApplication.Common.clsMaDonViPhatSinh">
+            <summary>
+            Class trả về đơn vị phát sinh dữ liệu
+            </summary>
+        </member>
+        <member name="M:ReportApplication.Common.clsMaDonViPhatSinh.GetMaNganHang(System.String)">
+            <summary>
+            Mã ngân hàng của đơn vị phát sinh dữ liệu
+            </summary>
+            <param name="maDonVi"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ReportApplication.Common.clsSetFileNameReport">
+            <summary>
+            Class tạo tên file báo cáo
+            </summary>
+        </member>
+        <member name="M:ReportApplication.Common.clsSetFileNameReport.SetFileNameReport(System.String,System.String,System.String,System.String,System.String,OfficeOpenXml.ExcelWorksheet)">
+            <summary>
+            Tạo tên file báo cáo ở template
+            </summary>
+            <param name="fileName"></param>
+            <param name="code"></param>
+            <param name="codeData"></param>
+            <param name="date"></param>
+            <param name="user"></param>
+            <param name="workSheet"></param>
+        </member>
+        <member name="F:ReportApplication.Common.clsUserCheckReport.IdUser">
+            <summary>
+            Người gửi báo cáo
+            </summary>
+        </member>
+        <member name="M:ReportApplication.Common.EasyDialog.ShowYesNoDialog(System.String)">
+            <summary>
+            Hiện msg box (yes/no)
+            </summary>
+            <param name="caption">Nội dung cần thông báo</param>
+            <returns>DialogResult</returns>
+        </member>
+        <member name="M:ReportApplication.Common.EasyDialog.ShowSuccessfulDialog(System.String)">
+            <summary>
+            Hiện msg box thông báo thao tác thành công
+            </summary>
+            <param name="action">Lưu/Xóa/Sửa/...</param>
+            <returns>DialogResult</returns>
+        </member>
+        <member name="M:ReportApplication.Common.EasyDialog.ShowUnsuccessfulDialog(System.String)">
+            <summary>
+            Hiện msg box thông báo thao tác không thành công
+            </summary>
+            <param name="action">Lưu/Xóa/Sửa/...</param>
+            <returns>DialogResult</returns>
+        </member>
+        <member name="M:ReportApplication.Common.EasyDialog.ShowErrorDialog(System.String)">
+            <summary>
+             Hiện msg box thông báo lỗi
+            </summary>
+            <param name="caption"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ReportApplication.Common.EasyDialog.ShowWarningDialog(System.String)">
+            <summary>
+            Hiện msg box cảnh báo
+            </summary>
+            <param name="caption"></param>
+            <returns></returns>
+        </member>
+        <member name="T:ReportApplication.FrmMain">
+             <summary>
+            
+             </summary>
+        </member>
+        <member name="M:ReportApplication.FrmMain.#ctor">
+            <summary>
+            Khởi tạo hàm Main
+            </summary>
+        </member>
+        <member name="F:ReportApplication.FrmMain.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:ReportApplication.FrmMain.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:ReportApplication.FrmMain.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="M:ReportApplication.Program.Main">
+            <summary>
+            The main entry point for the application.
+            </summary>
+        </member>
+        <member name="T:ReportApplication.Properties.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:ReportApplication.Properties.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:ReportApplication.Properties.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+    </members>
+</doc>

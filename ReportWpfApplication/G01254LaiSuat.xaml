@@ -1,0 +1,31 @@
+﻿<Window xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ReportWpfApplication"
+        xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" x:Class="ReportWpfApplication.G01254LaiSuat"
+        mc:Ignorable="d"
+        Title="Thông tin lãi suất tiền gửi" Height="400" Width="800" Loaded="Window_Loaded" Icon="1496317296_12.ico">
+
+    <dxlc:LayoutControl Orientation="Vertical">
+        <dxlc:LayoutGroup View="GroupBox" VerticalAlignment="Top">
+            <Button Name="btnSave" Click="btnSave_Click">Lưu thông tin</Button>
+        </dxlc:LayoutGroup>
+        <dxlc:LayoutGroup Header="Thông tin lãi suất" View="GroupBox" VerticalAlignment="Top">
+            <Label Content="Loại lãi suất :"></Label>
+            <TextBox Name="txtMaLoai"></TextBox>
+            <Label Content="Giá trị :"></Label>
+            <TextBox Name="txtGiaTri"></TextBox>
+            <Label Content="Kỳ hạn :"></Label>
+            <TextBox Name="txtKyHan"></TextBox>
+        </dxlc:LayoutGroup>
+        <dxlc:LayoutGroup Header="Danh sách lãi suất tiền gửi" View="GroupBox">
+            <dxg:GridControl Name="grdListLaiSuat" SelectionMode="Row" AutoGenerateColumns="AddNew" MouseDoubleClick="grdListLaiSuat_MouseDoubleClick">
+                <dxg:GridControl.View>
+                    <dxg:TableView AllowEditing="False" AllowGrouping="False" ShowGroupPanel="False" />
+                </dxg:GridControl.View>
+            </dxg:GridControl>
+        </dxlc:LayoutGroup>
+    </dxlc:LayoutControl>
+</Window>

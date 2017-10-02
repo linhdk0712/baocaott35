@@ -1,0 +1,15 @@
+﻿<Window xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ReportWpfApplication"
+        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:DAL="clr-namespace:ReportApplication.DAL;assembly=ReportApplication.DAL"  x:Name="frmMainWindow" x:Class="ReportWpfApplication.MainWindow"
+        mc:Ignorable="d"
+        Title="Chương trình quản lý file báo cáo theo TT 35" Height="350" Width="525" WindowStartupLocation="CenterScreen" WindowState="Maximized" Loaded="Window_Loaded" SizeToContent="WidthAndHeight" Icon="1496317296_12.ico" Foreground="#FF0811DA" WindowStyle="ToolWindow" SnapsToDevicePixels="True">
+
+    <Grid Margin="20">
+        <DataGrid x:Name="dataGrid" IsReadOnly="True" MouseDoubleClick="dataGrid_MouseDoubleClick" SelectionMode="Single">
+        </DataGrid>
+    </Grid>
+</Window>

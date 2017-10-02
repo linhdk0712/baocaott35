@@ -1,0 +1,51 @@
+﻿<Window xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+        x:Class="ReportWpfApplication.G01934"
+        mc:Ignorable="d" Height="300" Width="300" WindowState="Maximized"
+        Loaded="Window_Loaded"
+        Title="Báo cáo dư nợ cho vay phân theo ngành kinh tế (01_TCVM_TTGS)" Icon="1496317296_12.ico">
+    <Window.Resources>
+        <LinearGradientBrush x:Key="GrayBlueGradientBrush"
+                             StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#98FB98" />
+            <GradientStop Color="#00CC00" Offset="0.5" />
+            <GradientStop Color="#98FB98" Offset="1" />
+        </LinearGradientBrush>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background"
+                    Value="{StaticResource GrayBlueGradientBrush}" />
+            <Setter Property="Width" Value="80" />
+            <Setter Property="Margin" Value="10" />
+        </Style>
+    </Window.Resources>
+    <Grid ShowGridLines="True">
+        <dxlc:LayoutControl Orientation="Vertical">
+            <dxlc:LayoutGroup Header="Nhập thông tin" View="GroupBox" VerticalAlignment="Top">
+                <Label Margin="10" Content="Đơn vị phát sinh dữ liệu :"></Label>
+                <ComboBox Margin="10" Name="cbxDviPsinhDLieu" IsReadOnly="True" HorizontalAlignment="Left" />
+                <Label Margin="10" Content="Ngày phát sinh dữ liệu :"></Label>
+                <DatePicker Margin="10" Name="dateNgayPSinhDLieu"></DatePicker>
+                <Button Margin="10" Name="btnGetData" Click="btnGetData_Click">Lấy dữ liệu</Button>
+                <Button Margin="10" Name="btnCreateReport" Click="btnCreateReport_Click">Tạo báo cáo</Button>
+            </dxlc:LayoutGroup>
+            <dxlc:LayoutGroup Header="Dữ liệu tháng trước" View="GroupBox">
+                <dxg:GridControl  Name="grdReportPrevMonth" AutoGenerateColumns="AddNew" SelectionMode="Row">
+                    <dxg:GridControl.View>
+                    <dxg:TableView  AllowEditing="False" AllowGrouping="False" ShowAutoFilterRow="True" ShowGroupPanel="False" />
+                    </dxg:GridControl.View>
+                </dxg:GridControl>
+            </dxlc:LayoutGroup>
+            <dxlc:LayoutGroup Header="Dữ liệu tháng hiện tại" View="GroupBox">
+                <dxg:GridControl  Name="grdReportThisMonth" AutoGenerateColumns="AddNew" SelectionMode="Row">
+                    <dxg:GridControl.View>
+                        <dxg:TableView  AllowEditing="False" AllowGrouping="False" ShowAutoFilterRow="True" ShowGroupPanel="False" />
+                    </dxg:GridControl.View>
+                </dxg:GridControl>
+            </dxlc:LayoutGroup>
+        </dxlc:LayoutControl>
+    </Grid>
+</Window>

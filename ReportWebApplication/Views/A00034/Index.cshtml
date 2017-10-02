@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Báo cáo dư nợ tín dụng theo ngành kinh tế (theo ngành kinh doanh chính của khách hàng)";
+}
+@section scripts{
+    <script src="~/Scripts/Plugins/mustache.min.js"></script>
+    <script src="~/Scripts/Controllers/A00034Controller.js"></script>
+}
+
+<h3>Báo cáo dư nợ tín dụng theo ngành kinh tế (theo ngành kinh doanh chính của khách hàng)</h3>
+@{Html.RenderAction("DanhMucChiNhanh", "DanhMucChiNhanh");}
+<div class="row">
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <td>Mục đích vay vốn</td>
+                    <td>Kỳ hạn vay</td>
+                    <td>Dư nợ</td>
+                    <td>Lãi dự thu</td>
+                </tr>
+            </thead>
+            <tbody id="tblData"></tbody>
+        </table>
+    </div>
+</div>
+<script id="template" type="x-tmpl-mustache">
+    <tr>
+        <td>{{MUC_DICH_VAY}}</td>
+        <td>{{TGIAN_VAY}}</td>
+        <td>{{SO_DU}}</td>
+        <td>{{LAI_DU_THU}}</td>
+    </tr>
+</script>
