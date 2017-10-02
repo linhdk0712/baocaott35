@@ -1,0 +1,161 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<ReportApplication.BAL.clsChildMenu>
+
+@{
+    ViewBag.Title = "Index";
+}
+@section scripts{
+    <script src="~/Scripts/Plugins/jquery.bootstrap-growl.min.js"></script>
+    <script src="~/Scripts/Plugins/mustache.min.js"></script>
+    <script src="~/Scripts/Plugins/typeahead.bundle.min.js"></script>
+    <script src="~/Scripts/Plugins/bloodhound.min.js"></script>
+    <script src="~/Scripts/Plugins/jquery.autocomplete.min.js"></script>
+    <script src="~/Scripts/Controllers/homeController.js"></script>
+
+}
+
+<div class="container">
+    <br />
+    <div class="row">
+        @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+            {
+            <div class="col-md-4 form-group">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Tìm kiếm nhanh" name="search" id="search">
+                    <div class="input-group-btn">
+                        <button class="btn btn-info form-control" type="submit">
+                            <i class="glyphicon glyphicon-search"></i>
+                            Tìm kiếm
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        }
+    </div>
+    <br />
+    <div class="row">
+        <div class="col-md-4">
+            <div class="input-group">
+                <span class="input-group-addon" id="sizing-addon3"><i class="glyphicon glyphicon-calendar"></i>Date :</span>
+                <input type="date" class="form-control" name="dateNgayPsinhDlieu" aria-describedby="sizing-addon3" />
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="btn-group">
+                <button id="datasysn" class="btn btn-primary"><span class="glyphicon glyphicon-ok-circle"></span>Tổng hợp dữ liệu báo cáo </button>
+                <button id="checkWorkingDay" class="btn btn-warning "><span class="glyphicon glyphicon-check"></span>Kiểm tra ngày làm việc</button>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="row">
+        <div id="AllReports">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead class="text-center">
+                        <tr>
+                            <th class="text-center">
+                                Code
+                            </th>
+                            <th class="text-center">
+                                Identifier
+                            </th>
+                            <th class="text-center">
+                                Report name
+                            </th>
+                            <th class="text-center">
+                                Periodic
+                            </th>
+                            <th class="text-center">#</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                @if (@item.ID_MENU_CHA == 2)
+                                {
+                                    <td class="bg-primary ">
+                                        @item.FRM_CODE
+                                    </td>
+                                }
+                                else if (@item.ID_MENU_CHA == 1)
+                                {
+                                    <td class="bg-warning ">
+                                        @item.FRM_CODE
+                                    </td>
+                                }
+                                else if (@item.ID_MENU_CHA == 3)
+                                {
+                                    <td class="bg-info ">
+                                        @item.FRM_CODE
+                                    </td>
+                                }
+                                else if (@item.ID_MENU_CHA == 4)
+                                {
+                                    <td class="bg-success ">
+                                        @item.FRM_CODE
+                                    </td>
+                                }
+                                else
+                                {
+                                    <td class="bg-primary ">
+                                        @item.FRM_CODE
+                                    </td>
+                                }
+                                <td>
+                                    @Html.DisplayFor(model => item.FRM_NAME)
+                                </td>
+                                <td>
+                                   <strong> @Html.DisplayFor(model => item.FRM_DES)</strong>
+                                </td>
+                                <td>
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                    @Html.DisplayFor(model => item.MENU_CHA)
+                                </td>
+                                <td>
+                                    <button data-id="@item.FRM_NAME" class="btn btn-primary ajaxLink">
+                                        <span class="glyphicon glyphicon-ok-circle"></span>
+                                        Create Report
+                                    </button>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page, @search = ViewBag.tukhoa }))
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="wait" style="display:none;width:64px;height:64px;position:absolute;top:50%;left:50%;padding:1px;">
+    <img src="http://192.168.5.21:2017/Images/giphy-downsized.gif" width="64" height="64" alt="" />
+</div>
+<script id="template" type="x-tmpl-mustache">
+    <tr>
+        <td>{{TEN_GDICH}}</td>
+        <td>{{NGAY_LVIEC}}</td>
+    </tr>
+</script>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Ngày làm việc hiện tại của các đơn vị trong hệ thống</h4>
+            </div>
+            <div class="modal-body">
+                <table class="table table-bordered">
+                    <tbody id="workingDay"></tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

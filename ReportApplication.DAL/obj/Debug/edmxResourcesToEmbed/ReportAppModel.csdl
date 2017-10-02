@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="BAO_CAO_TT35_MENU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MENU_CODE" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MENU_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="STATUS" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DM_DON_VI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ID_DVI_CHA" Type="Int32" />
+    <Property Name="MA_DVI" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MA_DVI_CHA" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="LOAI_DVI" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="MA_TINHTP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NGUON_TAO_DL" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MA_NHNN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="NGAY_HDONG" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TEN_GDICH" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TEN_TAT" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DIA_CHI" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DIEN_THOAI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SO_FAX" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="WEBSITE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="LOGO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SO_DKKD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="MA_SO_THUE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="SO_TAI_KHOAN" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="TEN_NGAN_HANG" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MA_HACH_TOAN" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="GDOC_TEN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GDOC_TEL" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="GDOC_MOBILE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="GDOC_FAX" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="GDOC_EMAIL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="KTTRUONG_TEN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="KTTRUONG_TEL" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="KTTRUONG_MOBILE" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="KTTRUONG_FAX" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="KTTRUONG_EMAIL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="MA_TSUAT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="TTHAI_BGHI" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TTHAI_NVU" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MA_DVI_QLY" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MA_DVI_TAO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NGAY_NHAP" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NGUOI_NHAP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NGAY_CNHAT" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="NGUOI_CNHAT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="TTHAI_LY_DO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="HT_NSD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MA_NSD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MA_DANG_NHAP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="PHAN_LOAI_NSD" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MAT_KHAU" Type="String" MaxLength="128" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MA_HSO" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="TEN_GOI" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TEN_HO_DEM" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TEN_DAY_DU" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DIEN_THOAI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NGAY_SINH" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="GIOI_TINH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="TDOI_MKHAU" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NGAY_TAO" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NGAY_HIEU_LUC" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NGAY_HET_HAN" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="TGIAN_DOI_MKHAU" Type="Int32" />
+    <Property Name="TGIAN_DOI_DVI_TINH" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="NGAY_DOI_MKHAU" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="NGUON_TAO_DL" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TINH_TRANG" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="HAN_CHE_TRUY_CAP" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="TTHAI_BGHI" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TTHAI_NVU" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MA_DVI_QLY" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MA_DVI_TAO" Type="String" MaxLength="12" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NGAY_NHAP" Type="String" MaxLength="8" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NGUOI_NHAP" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NGAY_CNHAT" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="NGUOI_CNHAT" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="TTHAI_LY_DO" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="ReportApplicationEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="BAO_CAO_TT35_MENU" EntityType="Self.BAO_CAO_TT35_MENU" />
+    <EntitySet Name="DM_DON_VI" EntityType="Self.DM_DON_VI" />
+    <EntitySet Name="HT_NSD" EntityType="Self.HT_NSD" />
+    <EntitySet Name="BAO_CAO_TT35" EntityType="Model.BAO_CAO_TT35" />
+    <EntitySet Name="TT35_LAI_SUAT_G01254" EntityType="Model.TT35_LAI_SUAT_G01254" />
+  </EntityContainer>
+  <EntityType Name="BAO_CAO_TT35">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MENU_CHA" Type="Int32" />
+    <Property Name="FRM_CODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="FRM_NAME" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="FRM_DES" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="STATUS" Type="Boolean" Nullable="false" />
+    <Property Name="DATA_STATUS" Type="Boolean" />
+    <Property Name="BC_ALL" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="TT35_LAI_SUAT_G01254">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NGAY_DL" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="MA_LAI_SUAT" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="LAI_SUAT" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="KY_HAN" Type="Int32" />
+    <Property Name="DV_TINH" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

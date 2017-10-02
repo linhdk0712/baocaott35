@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="ReportApplicationEntities">
+    <EntitySetMapping Name="BAO_CAO_TT35_MENU">
+      <EntityTypeMapping TypeName="Model.BAO_CAO_TT35_MENU">
+        <MappingFragment StoreEntitySet="BAO_CAO_TT35_MENU">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MENU_CODE" ColumnName="MENU_CODE" />
+          <ScalarProperty Name="MENU_NAME" ColumnName="MENU_NAME" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DM_DON_VI">
+      <EntityTypeMapping TypeName="Model.DM_DON_VI">
+        <MappingFragment StoreEntitySet="DM_DON_VI">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ID_DVI_CHA" ColumnName="ID_DVI_CHA" />
+          <ScalarProperty Name="MA_DVI" ColumnName="MA_DVI" />
+          <ScalarProperty Name="MA_DVI_CHA" ColumnName="MA_DVI_CHA" />
+          <ScalarProperty Name="LOAI_DVI" ColumnName="LOAI_DVI" />
+          <ScalarProperty Name="MA_TINHTP" ColumnName="MA_TINHTP" />
+          <ScalarProperty Name="NGUON_TAO_DL" ColumnName="NGUON_TAO_DL" />
+          <ScalarProperty Name="MA_NHNN" ColumnName="MA_NHNN" />
+          <ScalarProperty Name="NGAY_HDONG" ColumnName="NGAY_HDONG" />
+          <ScalarProperty Name="TEN_GDICH" ColumnName="TEN_GDICH" />
+          <ScalarProperty Name="TEN_TAT" ColumnName="TEN_TAT" />
+          <ScalarProperty Name="DIA_CHI" ColumnName="DIA_CHI" />
+          <ScalarProperty Name="DIEN_THOAI" ColumnName="DIEN_THOAI" />
+          <ScalarProperty Name="SO_FAX" ColumnName="SO_FAX" />
+          <ScalarProperty Name="WEBSITE" ColumnName="WEBSITE" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="LOGO" ColumnName="LOGO" />
+          <ScalarProperty Name="SO_DKKD" ColumnName="SO_DKKD" />
+          <ScalarProperty Name="MA_SO_THUE" ColumnName="MA_SO_THUE" />
+          <ScalarProperty Name="SO_TAI_KHOAN" ColumnName="SO_TAI_KHOAN" />
+          <ScalarProperty Name="TEN_NGAN_HANG" ColumnName="TEN_NGAN_HANG" />
+          <ScalarProperty Name="MA_HACH_TOAN" ColumnName="MA_HACH_TOAN" />
+          <ScalarProperty Name="GDOC_TEN" ColumnName="GDOC_TEN" />
+          <ScalarProperty Name="GDOC_TEL" ColumnName="GDOC_TEL" />
+          <ScalarProperty Name="GDOC_MOBILE" ColumnName="GDOC_MOBILE" />
+          <ScalarProperty Name="GDOC_FAX" ColumnName="GDOC_FAX" />
+          <ScalarProperty Name="GDOC_EMAIL" ColumnName="GDOC_EMAIL" />
+          <ScalarProperty Name="KTTRUONG_TEN" ColumnName="KTTRUONG_TEN" />
+          <ScalarProperty Name="KTTRUONG_TEL" ColumnName="KTTRUONG_TEL" />
+          <ScalarProperty Name="KTTRUONG_MOBILE" ColumnName="KTTRUONG_MOBILE" />
+          <ScalarProperty Name="KTTRUONG_FAX" ColumnName="KTTRUONG_FAX" />
+          <ScalarProperty Name="KTTRUONG_EMAIL" ColumnName="KTTRUONG_EMAIL" />
+          <ScalarProperty Name="MA_TSUAT" ColumnName="MA_TSUAT" />
+          <ScalarProperty Name="TTHAI_BGHI" ColumnName="TTHAI_BGHI" />
+          <ScalarProperty Name="TTHAI_NVU" ColumnName="TTHAI_NVU" />
+          <ScalarProperty Name="MA_DVI_QLY" ColumnName="MA_DVI_QLY" />
+          <ScalarProperty Name="MA_DVI_TAO" ColumnName="MA_DVI_TAO" />
+          <ScalarProperty Name="NGAY_NHAP" ColumnName="NGAY_NHAP" />
+          <ScalarProperty Name="NGUOI_NHAP" ColumnName="NGUOI_NHAP" />
+          <ScalarProperty Name="NGAY_CNHAT" ColumnName="NGAY_CNHAT" />
+          <ScalarProperty Name="NGUOI_CNHAT" ColumnName="NGUOI_CNHAT" />
+          <ScalarProperty Name="TTHAI_LY_DO" ColumnName="TTHAI_LY_DO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HT_NSD">
+      <EntityTypeMapping TypeName="Model.HT_NSD">
+        <MappingFragment StoreEntitySet="HT_NSD">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MA_NSD" ColumnName="MA_NSD" />
+          <ScalarProperty Name="MA_DANG_NHAP" ColumnName="MA_DANG_NHAP" />
+          <ScalarProperty Name="PHAN_LOAI_NSD" ColumnName="PHAN_LOAI_NSD" />
+          <ScalarProperty Name="MAT_KHAU" ColumnName="MAT_KHAU" />
+          <ScalarProperty Name="MA_HSO" ColumnName="MA_HSO" />
+          <ScalarProperty Name="TEN_GOI" ColumnName="TEN_GOI" />
+          <ScalarProperty Name="TEN_HO_DEM" ColumnName="TEN_HO_DEM" />
+          <ScalarProperty Name="TEN_DAY_DU" ColumnName="TEN_DAY_DU" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="DIEN_THOAI" ColumnName="DIEN_THOAI" />
+          <ScalarProperty Name="NGAY_SINH" ColumnName="NGAY_SINH" />
+          <ScalarProperty Name="GIOI_TINH" ColumnName="GIOI_TINH" />
+          <ScalarProperty Name="TDOI_MKHAU" ColumnName="TDOI_MKHAU" />
+          <ScalarProperty Name="NGAY_TAO" ColumnName="NGAY_TAO" />
+          <ScalarProperty Name="NGAY_HIEU_LUC" ColumnName="NGAY_HIEU_LUC" />
+          <ScalarProperty Name="NGAY_HET_HAN" ColumnName="NGAY_HET_HAN" />
+          <ScalarProperty Name="TGIAN_DOI_MKHAU" ColumnName="TGIAN_DOI_MKHAU" />
+          <ScalarProperty Name="TGIAN_DOI_DVI_TINH" ColumnName="TGIAN_DOI_DVI_TINH" />
+          <ScalarProperty Name="NGAY_DOI_MKHAU" ColumnName="NGAY_DOI_MKHAU" />
+          <ScalarProperty Name="NGUON_TAO_DL" ColumnName="NGUON_TAO_DL" />
+          <ScalarProperty Name="TINH_TRANG" ColumnName="TINH_TRANG" />
+          <ScalarProperty Name="HAN_CHE_TRUY_CAP" ColumnName="HAN_CHE_TRUY_CAP" />
+          <ScalarProperty Name="TTHAI_BGHI" ColumnName="TTHAI_BGHI" />
+          <ScalarProperty Name="TTHAI_NVU" ColumnName="TTHAI_NVU" />
+          <ScalarProperty Name="MA_DVI_QLY" ColumnName="MA_DVI_QLY" />
+          <ScalarProperty Name="MA_DVI_TAO" ColumnName="MA_DVI_TAO" />
+          <ScalarProperty Name="NGAY_NHAP" ColumnName="NGAY_NHAP" />
+          <ScalarProperty Name="NGUOI_NHAP" ColumnName="NGUOI_NHAP" />
+          <ScalarProperty Name="NGAY_CNHAT" ColumnName="NGAY_CNHAT" />
+          <ScalarProperty Name="NGUOI_CNHAT" ColumnName="NGUOI_CNHAT" />
+          <ScalarProperty Name="TTHAI_LY_DO" ColumnName="TTHAI_LY_DO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BAO_CAO_TT35">
+      <EntityTypeMapping TypeName="Model.BAO_CAO_TT35">
+        <MappingFragment StoreEntitySet="BAO_CAO_TT35">
+          <ScalarProperty Name="BC_ALL" ColumnName="BC_ALL" />
+          <ScalarProperty Name="DATA_STATUS" ColumnName="DATA_STATUS" />
+          <ScalarProperty Name="STATUS" ColumnName="STATUS" />
+          <ScalarProperty Name="FRM_DES" ColumnName="FRM_DES" />
+          <ScalarProperty Name="FRM_NAME" ColumnName="FRM_NAME" />
+          <ScalarProperty Name="FRM_CODE" ColumnName="FRM_CODE" />
+          <ScalarProperty Name="MENU_CHA" ColumnName="MENU_CHA" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TT35_LAI_SUAT_G01254">
+      <EntityTypeMapping TypeName="Model.TT35_LAI_SUAT_G01254">
+        <MappingFragment StoreEntitySet="TT35_LAI_SUAT_G01254">
+          <ScalarProperty Name="DV_TINH" ColumnName="DV_TINH" />
+          <ScalarProperty Name="KY_HAN" ColumnName="KY_HAN" />
+          <ScalarProperty Name="LAI_SUAT" ColumnName="LAI_SUAT" />
+          <ScalarProperty Name="MA_LAI_SUAT" ColumnName="MA_LAI_SUAT" />
+          <ScalarProperty Name="NGAY_DL" ColumnName="NGAY_DL" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

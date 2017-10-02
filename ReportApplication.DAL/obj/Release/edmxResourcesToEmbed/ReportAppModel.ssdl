@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BAO_CAO_TT35">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MENU_CHA" Type="int" />
+    <Property Name="FRM_CODE" Type="varchar" MaxLength="50" />
+    <Property Name="FRM_NAME" Type="nvarchar" MaxLength="500" />
+    <Property Name="FRM_DES" Type="nvarchar" MaxLength="500" />
+    <Property Name="STATUS" Type="bit" Nullable="false" />
+    <Property Name="DATA_STATUS" Type="bit" />
+    <Property Name="BC_ALL" Type="bit" />
+  </EntityType>
+  <EntityType Name="BAO_CAO_TT35_MENU">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MENU_CODE" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="MENU_NAME" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="STATUS" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DM_DON_VI">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ID_DVI_CHA" Type="int" />
+    <Property Name="MA_DVI" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="MA_DVI_CHA" Type="varchar" MaxLength="12" />
+    <Property Name="LOAI_DVI" Type="varchar" MaxLength="30" />
+    <Property Name="MA_TINHTP" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="NGUON_TAO_DL" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="MA_NHNN" Type="varchar" MaxLength="30" />
+    <Property Name="NGAY_HDONG" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="TEN_GDICH" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="TEN_TAT" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="DIA_CHI" Type="nvarchar" MaxLength="255" />
+    <Property Name="DIEN_THOAI" Type="varchar" MaxLength="20" />
+    <Property Name="SO_FAX" Type="varchar" MaxLength="20" />
+    <Property Name="WEBSITE" Type="nvarchar" MaxLength="255" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="20" />
+    <Property Name="LOGO" Type="nvarchar" MaxLength="255" />
+    <Property Name="SO_DKKD" Type="varchar" MaxLength="20" />
+    <Property Name="MA_SO_THUE" Type="varchar" MaxLength="20" />
+    <Property Name="SO_TAI_KHOAN" Type="varchar" MaxLength="20" />
+    <Property Name="TEN_NGAN_HANG" Type="nvarchar" MaxLength="255" />
+    <Property Name="MA_HACH_TOAN" Type="varchar" MaxLength="30" />
+    <Property Name="GDOC_TEN" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="GDOC_TEL" Type="varchar" MaxLength="20" />
+    <Property Name="GDOC_MOBILE" Type="varchar" MaxLength="20" />
+    <Property Name="GDOC_FAX" Type="varchar" MaxLength="20" />
+    <Property Name="GDOC_EMAIL" Type="varchar" MaxLength="255" />
+    <Property Name="KTTRUONG_TEN" Type="nvarchar" MaxLength="255" />
+    <Property Name="KTTRUONG_TEL" Type="varchar" MaxLength="20" />
+    <Property Name="KTTRUONG_MOBILE" Type="varchar" MaxLength="20" />
+    <Property Name="KTTRUONG_FAX" Type="varchar" MaxLength="20" />
+    <Property Name="KTTRUONG_EMAIL" Type="varchar" MaxLength="255" />
+    <Property Name="MA_TSUAT" Type="varchar" MaxLength="30" />
+    <Property Name="TTHAI_BGHI" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="TTHAI_NVU" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="MA_DVI_QLY" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="MA_DVI_TAO" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="NGAY_NHAP" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="NGUOI_NHAP" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="NGAY_CNHAT" Type="varchar" MaxLength="8" />
+    <Property Name="NGUOI_CNHAT" Type="varchar" MaxLength="30" />
+    <Property Name="TTHAI_LY_DO" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="HT_NSD">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MA_NSD" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="MA_DANG_NHAP" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="PHAN_LOAI_NSD" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="MAT_KHAU" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="MA_HSO" Type="varchar" MaxLength="30" />
+    <Property Name="TEN_GOI" Type="nvarchar" MaxLength="255" />
+    <Property Name="TEN_HO_DEM" Type="nvarchar" MaxLength="255" />
+    <Property Name="TEN_DAY_DU" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="EMAIL" Type="varchar" MaxLength="255" />
+    <Property Name="DIEN_THOAI" Type="varchar" MaxLength="20" />
+    <Property Name="NGAY_SINH" Type="varchar" MaxLength="8" />
+    <Property Name="GIOI_TINH" Type="varchar" MaxLength="10" />
+    <Property Name="TDOI_MKHAU" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="NGAY_TAO" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="NGAY_HIEU_LUC" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="NGAY_HET_HAN" Type="varchar" MaxLength="8" />
+    <Property Name="TGIAN_DOI_MKHAU" Type="int" />
+    <Property Name="TGIAN_DOI_DVI_TINH" Type="varchar" MaxLength="30" />
+    <Property Name="NGAY_DOI_MKHAU" Type="varchar" MaxLength="8" />
+    <Property Name="NGUON_TAO_DL" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="TINH_TRANG" Type="varchar" MaxLength="30" />
+    <Property Name="HAN_CHE_TRUY_CAP" Type="varchar" MaxLength="5" />
+    <Property Name="TTHAI_BGHI" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="TTHAI_NVU" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="MA_DVI_QLY" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="MA_DVI_TAO" Type="varchar" MaxLength="12" Nullable="false" />
+    <Property Name="NGAY_NHAP" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="NGUOI_NHAP" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="NGAY_CNHAT" Type="varchar" MaxLength="8" />
+    <Property Name="NGUOI_CNHAT" Type="varchar" MaxLength="30" />
+    <Property Name="TTHAI_LY_DO" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="TT35_LAI_SUAT_G01254">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NGAY_DL" Type="varchar" MaxLength="8" Nullable="false" />
+    <Property Name="MA_LAI_SUAT" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="KY_HAN" Type="int" />
+    <Property Name="DV_TINH" Type="varchar" MaxLength="10" />
+    <Property Name="LAI_SUAT" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="BAO_CAO_TT35" EntityType="Self.BAO_CAO_TT35" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BAO_CAO_TT35_MENU" EntityType="Self.BAO_CAO_TT35_MENU" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DM_DON_VI" EntityType="Self.DM_DON_VI" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HT_NSD" EntityType="Self.HT_NSD" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TT35_LAI_SUAT_G01254" EntityType="Self.TT35_LAI_SUAT_G01254" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

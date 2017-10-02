@@ -59,136 +59,250 @@ namespace ReportWebApplication.Controllers
                   clsMaDonViPhatSinh.GetMaNganHang(maDviPsinhDlieu), setNgayBaoCao, _user, excelSheet);
                 // Số liệu quý báo cáo
                 var _701DuCoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "701" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
+
                 var _702DuCoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "702" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
+
                 var _7022DuCoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "7022" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
+
                 var _709DuCoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "709" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
+
                 var _801DuNoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "801" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _802DuNoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "802" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _8022DuNoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "8022" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _805DuNoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "805" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _809DuNoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "809" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _71DuCoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "71" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
+
                 var _81DuNoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "81" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _72DuCoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "72" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
+
                 var _82DuNoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "82" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _79DuCoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "79" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
+
                 var _89DuNoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "89" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _83DuNoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "83" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                //
+                var _833DuNoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "833" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _851DuNoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "851" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _853DuNoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "853" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _854DuNoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "854" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _855DuNoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "855" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _856DuNoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "856" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _87DuNoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "87" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _871DuNoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "871" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _86DuNoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "86" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _862DuNoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "862" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _868DuNoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "868" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _883DuNoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "883" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _882DuNoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "882" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _8822DuNoQuyNay = bangCanDoiKeToan.Where(x => x.F03 == "8822" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
                 // Số liệu quý trước
                 var _701DuCoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "701" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
+
                 var _702DuCoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "702" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
+
+                var _7022DuCoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "7022" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
+
                 var _709DuCoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "709" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
+
                 var _801DuNoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "801" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _802DuNoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "802" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
+                var _8022DuNoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "8022" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _805DuNoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "805" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _809DuNoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "809" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _71DuCoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "71" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
+
                 var _81DuNoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "81" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _72DuCoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "72" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
+
                 var _82DuNoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "82" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _79DuCoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "79" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
+
                 var _89DuNoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "89" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _83DuNoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "83" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
+                var _833DuNoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "833" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _851DuNoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "851" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _853DuNoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "853" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _854DuNoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "854" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _855DuNoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "855" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _856DuNoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "856" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _87DuNoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "87" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _871DuNoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "871" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _86DuNoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "86" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _862DuNoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "862" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _868DuNoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "868" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _883DuNoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "883" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _882DuNoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "882" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _8822DuNoQuyTruoc = bangCanDoiKeToanQuyTruoc.Where(x => x.F03 == "8822" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
                 // Số liệu năm trước
                 var _701DuCoNamTruoc = bangCanDoiKeToanNamTruoc.Where(x => x.F03 == "701" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
+
                 var _702DuCoNamTruoc = bangCanDoiKeToanNamTruoc.Where(x => x.F03 == "702" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
+
                 var _709DuCoNamTruoc = bangCanDoiKeToanNamTruoc.Where(x => x.F03 == "709" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
+
                 var _801DuNoNamTruoc = bangCanDoiKeToanNamTruoc.Where(x => x.F03 == "801" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _802DuNoNamTruoc = bangCanDoiKeToanNamTruoc.Where(x => x.F03 == "802" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _805DuNoNamTruoc = bangCanDoiKeToanNamTruoc.Where(x => x.F03 == "805" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _809DuNoNamTruoc = bangCanDoiKeToanNamTruoc.Where(x => x.F03 == "809" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _71DuCoNamTruoc = bangCanDoiKeToanNamTruoc.Where(x => x.F03 == "71" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
+
                 var _81DuNoNamTruoc = bangCanDoiKeToanNamTruoc.Where(x => x.F03 == "81" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _72DuCoNamTruoc = bangCanDoiKeToanNamTruoc.Where(x => x.F03 == "72" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
+
                 var _82DuNoNamTruoc = bangCanDoiKeToanNamTruoc.Where(x => x.F03 == "82" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _79DuCoNamTruoc = bangCanDoiKeToanNamTruoc.Where(x => x.F03 == "79" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
+
                 var _89DuNoNamTruoc = bangCanDoiKeToanNamTruoc.Where(x => x.F03 == "89" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _83DuNoNamTruoc = bangCanDoiKeToanNamTruoc.Where(x => x.F03 == "83" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
+                var _833DuNoNamTruoc = bangCanDoiKeToanNamTruoc.Where(x => x.F03 == "833" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _851DuNoNamTruoc = bangCanDoiKeToanNamTruoc.Where(x => x.F03 == "851" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _853DuNoNamTruoc = bangCanDoiKeToanNamTruoc.Where(x => x.F03 == "853" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _854DuNoNamTruoc = bangCanDoiKeToanNamTruoc.Where(x => x.F03 == "854" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _855DuNoNamTruoc = bangCanDoiKeToanNamTruoc.Where(x => x.F03 == "855" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _856DuNoNamTruoc = bangCanDoiKeToanNamTruoc.Where(x => x.F03 == "856" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _87DuNoNamTruoc = bangCanDoiKeToanNamTruoc.Where(x => x.F03 == "87" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _871DuNoNamTruoc = bangCanDoiKeToanNamTruoc.Where(x => x.F03 == "871" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _86DuNoNamTruoc = bangCanDoiKeToanNamTruoc.Where(x => x.F03 == "86" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _862DuNoNamTruoc = bangCanDoiKeToanNamTruoc.Where(x => x.F03 == "862" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _868DuNoNamTruoc = bangCanDoiKeToanNamTruoc.Where(x => x.F03 == "868" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _883DuNoNamTruoc = bangCanDoiKeToanNamTruoc.Where(x => x.F03 == "883" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _882DuNoNamTruoc = bangCanDoiKeToanNamTruoc.Where(x => x.F03 == "882" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _8822DuNoNamTruoc = bangCanDoiKeToanNamTruoc.Where(x => x.F03 == "8822" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
 
                 #region Phát sinh trong kỳ
 
                 var thuNhapLaiTienGui = _701DuCoQuyNay - _701DuCoQuyTruoc;
-                var thuNhapLaiChoVay = _702DuCoQuyNay - _702DuCoQuyTruoc - _7022DuCoQuyNay;
+
+                var thuNhapLaiChoVay = _702DuCoQuyNay - _702DuCoQuyTruoc - _7022DuCoQuyNay + _7022DuCoQuyTruoc;
+
                 var thuNhapKhacTuHoatDongTinDung = _709DuCoQuyNay - _709DuCoQuyTruoc;
+
                 var thuNhapLaiVaCacKhoanThuTuongTu =
                     thuNhapLaiTienGui + thuNhapLaiChoVay + thuNhapKhacTuHoatDongTinDung;
 
                 var traLaiTienGui =  - _801DuNoQuyTruoc + _801DuNoQuyNay;
-                var traLaiTienVay = _802DuNoQuyNay - _802DuNoQuyTruoc - _8022DuNoQuyNay;
+
+                var traLaiTienVay = _802DuNoQuyNay - _802DuNoQuyTruoc - _8022DuNoQuyNay + _8022DuNoQuyTruoc;
+
                 var traLaiThueTaiChinh = _805DuNoQuyNay - _805DuNoQuyTruoc;
+
                 var chiPhiHoatDongTinDungKhac = _809DuNoQuyNay - _809DuNoQuyTruoc;
+
                 var chiPhiLaiVaCacChiPhiTuongTu =
                     traLaiTienGui + traLaiTienVay + traLaiThueTaiChinh + chiPhiHoatDongTinDungKhac;
 
                 var thuNhapLaiThuan = thuNhapLaiVaCacKhoanThuTuongTu - chiPhiLaiVaCacChiPhiTuongTu;
 
                 var thuNhapTuHoatDongDichVu = _71DuCoQuyNay - _71DuCoQuyTruoc;
+
                 var chiPhiTuHoatDongDichVu = _81DuNoQuyNay - _81DuNoQuyTruoc;
 
                 var laiLoThuanTuHoatDongDichVu = thuNhapTuHoatDongDichVu - chiPhiTuHoatDongDichVu;
 
                 var thuNhapTuKinhDoanhNgoaiHoi = _72DuCoQuyNay - _72DuCoQuyTruoc;
+
                 var chiPhiKinhDoanhNgoaiHoi = _82DuNoQuyNay - _82DuNoQuyTruoc;
 
                 var laiLoThuanTuKinhDoanhNgoaiHoi = thuNhapTuKinhDoanhNgoaiHoi - chiPhiKinhDoanhNgoaiHoi;
 
                 var thuNhapKhac = _79DuCoQuyNay - _79DuCoQuyTruoc;
+
                 var chiPhiKhac = _89DuNoQuyNay - _89DuNoQuyTruoc;
 
                 var laiLoThuanTuHoatDongKhac = thuNhapKhac - chiPhiKhac;
 
-                var chiNopThueVaCacKhoanPhi = _83DuNoQuyNay - _83DuNoQuyTruoc;
+                var chiNopThueVaCacKhoanPhi = _83DuNoQuyNay - _83DuNoQuyTruoc -_833DuNoQuyNay;
+
                 var chiLuongVaPhucap = _851DuNoQuyNay - _851DuNoQuyTruoc;
+
                 var cacKhoanChiDongGopTheoLuong = _853DuNoQuyNay - _853DuNoQuyTruoc;
+
                 var chiTroCap = _854DuNoQuyNay - _854DuNoQuyTruoc;
+
                 var chiKhacChoNhanVien = _855DuNoQuyNay + _856DuNoQuyNay - _855DuNoQuyTruoc - _856DuNoQuyTruoc;
+
+                var chiPhiChoNhanVien = chiLuongVaPhucap + cacKhoanChiDongGopTheoLuong + chiTroCap + chiKhacChoNhanVien;
+
                 var chiVeTaiSan = _87DuNoQuyNay - _87DuNoQuyTruoc;
+
                 var khauHaoTscd = _871DuNoQuyNay - _871DuNoQuyTruoc;
+
                 var chiHoatDongQuanLyCongVu = _86DuNoQuyNay - _86DuNoQuyTruoc;
+
                 var congTacPhi = _862DuNoQuyNay - _862DuNoQuyTruoc;
+
                 var chiCacHoatDongDoanThe = _868DuNoQuyNay - _868DuNoQuyTruoc;
+
                 var chiNopPhiBaoHiemTienGuiCuaKhachHang = _883DuNoQuyNay - _883DuNoQuyTruoc;
+
                 var chiPhiDuPhong = _882DuNoQuyNay - _882DuNoQuyTruoc - _8822DuNoQuyNay + _8822DuNoQuyTruoc;
+
                 const decimal chiPhiHoatDongKhac = 0;
 
                 var chiPhiHoatDong = chiNopThueVaCacKhoanPhi + chiLuongVaPhucap + cacKhoanChiDongGopTheoLuong +
@@ -196,13 +310,13 @@ namespace ReportWebApplication.Controllers
                                          chiNopPhiBaoHiemTienGuiCuaKhachHang + chiPhiDuPhong + chiPhiHoatDongKhac;
 
                 var loiNhuanThuanTruocChiPhiDuPhongRuiRo =
-                    thuNhapLaiThuan + laiLoThuanTuHoatDongDichVu + laiLoThuanTuKinhDoanhNgoaiHoi + laiLoThuanTuHoatDongKhac + chiPhiHoatDong;
+                    thuNhapLaiThuan + laiLoThuanTuHoatDongDichVu + laiLoThuanTuKinhDoanhNgoaiHoi + laiLoThuanTuHoatDongKhac - chiPhiHoatDong;
 
-                var chiPhiDuPhongRuiRoTinDungChovayKhachHang = _8822DuNoQuyNay - _8822DuNoQuyNay;
+                var chiPhiDuPhongRuiRoTinDungChovayKhachHang = _8822DuNoQuyNay - _8822DuNoQuyTruoc;
 
                 var chiPhiDuPhongRuiRoTinDung = chiPhiDuPhongRuiRoTinDungChovayKhachHang;
 
-                var loiNhuanTruocThue = loiNhuanThuanTruocChiPhiDuPhongRuiRo + chiPhiDuPhongRuiRoTinDung;
+                var loiNhuanTruocThue = loiNhuanThuanTruocChiPhiDuPhongRuiRo - chiPhiDuPhongRuiRoTinDung;
 
                 var thuNhapChiuThue = loiNhuanTruocThue;
 
@@ -217,47 +331,73 @@ namespace ReportWebApplication.Controllers
                 #region Lũy kế từ đầu năm đến thời điểm kết thúc kỳ báo cáo
 
                 var thuNhapLaiTienGuiLuyKe = _701DuCoQuyNay - _701DuCoNamTruoc;
-                var thuNhapLaiChoVayLuyKe = _702DuCoQuyNay - _702DuCoNamTruoc - _7022DuCoQuyNay;
+
+                //var thuNhapLaiChoVayLuyKe = _702DuCoQuyNay - _702DuCoNamTruoc - _7022DuCoQuyNay;
+                // Edited 02/10/2017
+                var thuNhapLaiChoVayLuyKe = _702DuCoQuyNay - _7022DuCoQuyNay;
+
                 var thuNhapKhacTuHoatDongTinDungLuyKe = _709DuCoQuyNay - _709DuCoNamTruoc;
+
                 var thuNhapLaiVaCacKhoanThuTuongTuLuyKe =
                     thuNhapLaiTienGuiLuyKe + thuNhapLaiChoVayLuyKe + thuNhapKhacTuHoatDongTinDungLuyKe;
 
                 var traLaiTienGuiLuyKe = _801DuNoQuyNay - _801DuNoNamTruoc;
+
                 var traLaiTienVayLuyKe = _802DuNoQuyNay - _802DuNoNamTruoc - _8022DuNoQuyNay;
+
                 var traLaiThueTaiChinhLuyKe = _805DuNoQuyNay - _805DuNoNamTruoc;
+
                 var chiPhiHoatDongTinDungKhacLuyKe = _809DuNoQuyNay - _809DuNoNamTruoc;
+
                 var chiPhiLaiVaCacChiPhiTuongTuLuyKe =
                     traLaiTienGuiLuyKe + traLaiTienVayLuyKe + traLaiThueTaiChinhLuyKe + chiPhiHoatDongTinDungKhacLuyKe;
 
                 var thuNhapLaiThuanLuyKe = thuNhapLaiVaCacKhoanThuTuongTuLuyKe - chiPhiLaiVaCacChiPhiTuongTuLuyKe;
 
                 var thuNhapTuHoatDongDichVuLuyKe = _71DuCoQuyNay - _71DuCoNamTruoc;
+
                 var chiPhiTuHoatDongDichVuLuyKe = _81DuNoQuyNay - _81DuNoNamTruoc;
 
                 var laiLoThuanTuHoatDongDichVuLuyKe = thuNhapTuHoatDongDichVuLuyKe - chiPhiTuHoatDongDichVuLuyKe;
 
                 var thuNhapTuKinhDoanhNgoaiHoiLuyKe = _72DuCoQuyNay - _72DuCoNamTruoc;
+
                 var chiPhiKinhDoanhNgoaiHoiLuyKe = _82DuNoQuyNay - _82DuNoNamTruoc;
 
                 var laiLoThuanTuKinhDoanhNgoaiHoiLuyKe = thuNhapTuKinhDoanhNgoaiHoi - chiPhiKinhDoanhNgoaiHoi;
 
                 var thuNhapKhacLuyKe = _79DuCoQuyNay - _79DuCoNamTruoc;
+
                 var chiPhiKhacLuyKe = _89DuNoQuyNay - _89DuNoNamTruoc;
 
                 var laiLoThuanTuHoatDongKhacLuyKe = thuNhapKhacLuyKe - chiPhiKhacLuyKe;
 
-                var chiNopThueVaCacKhoanPhiLuyKe = _83DuNoQuyNay - _83DuNoNamTruoc;
+                var chiNopThueVaCacKhoanPhiLuyKe = _83DuNoQuyNay - _83DuNoNamTruoc - _833DuNoQuyNay;
+
                 var chiLuongVaPhucapLuyKe = _851DuNoQuyNay - _851DuNoNamTruoc;
+
                 var cacKhoanChiDongGopTheoLuongLuyKe = _853DuNoQuyNay - _853DuNoNamTruoc;
+
                 var chiTroCapLuyKe = _854DuNoQuyNay - _854DuNoNamTruoc;
+
                 var chiKhacChoNhanVienLuyKe = _855DuNoQuyNay + _856DuNoQuyNay - _855DuNoNamTruoc - _856DuNoNamTruoc;
+
+                var chiPhiChoNhanVienLuyKe = chiLuongVaPhucapLuyKe + cacKhoanChiDongGopTheoLuongLuyKe + chiTroCapLuyKe + chiKhacChoNhanVienLuyKe;
+
                 var chiVeTaiSanLuyKe = _87DuNoQuyNay - _87DuNoNamTruoc;
+
                 var khauHaoTscdLuyKe = _871DuNoQuyNay - _871DuNoNamTruoc;
+
                 var chiHoatDongQuanLyCongVuLuyKe = _86DuNoQuyNay - _86DuNoNamTruoc;
+
                 var congTacPhiLuyKe = _862DuNoQuyNay - _862DuNoNamTruoc;
+
                 var chiCacHoatDongDoanTheLuyKe = _868DuNoQuyNay - _868DuNoNamTruoc;
+
                 var chiNopPhiBaoHiemTienGuiCuaKhachHangLuyKe = _883DuNoQuyNay - _883DuNoNamTruoc;
+
                 var chiPhiDuPhongLuyKe = _882DuNoQuyNay - _8822DuNoQuyNay - _882DuNoNamTruoc - _8822DuNoNamTruoc;
+
                 const decimal chiPhiHoatDongKhacLuyKe = 0;
 
                 var chiPhiHoatDongLuyKe = chiNopThueVaCacKhoanPhiLuyKe + chiLuongVaPhucapLuyKe + cacKhoanChiDongGopTheoLuongLuyKe +
@@ -265,13 +405,13 @@ namespace ReportWebApplication.Controllers
                                          chiNopPhiBaoHiemTienGuiCuaKhachHangLuyKe + chiPhiDuPhongLuyKe + chiPhiHoatDongKhacLuyKe;
 
                 var loiNhuanThuanTruocChiPhiDuPhongRuiRoLuyKe =
-                    thuNhapLaiThuanLuyKe + laiLoThuanTuHoatDongDichVuLuyKe + laiLoThuanTuKinhDoanhNgoaiHoiLuyKe + laiLoThuanTuHoatDongKhacLuyKe + chiPhiHoatDongLuyKe;
+                    thuNhapLaiThuanLuyKe + laiLoThuanTuHoatDongDichVuLuyKe + laiLoThuanTuKinhDoanhNgoaiHoiLuyKe + laiLoThuanTuHoatDongKhacLuyKe - chiPhiHoatDongLuyKe;
 
                 var chiPhiDuPhongRuiRoTinDungChovayKhachHangLuyKe = _8822DuNoQuyNay - _8822DuNoNamTruoc;
 
                 var chiPhiDuPhongRuiRoTinDungLuyKe = chiPhiDuPhongRuiRoTinDungChovayKhachHangLuyKe;
 
-                var loiNhuanTruocThueLuyKe = loiNhuanThuanTruocChiPhiDuPhongRuiRoLuyKe + chiPhiDuPhongRuiRoTinDungLuyKe;
+                var loiNhuanTruocThueLuyKe = loiNhuanThuanTruocChiPhiDuPhongRuiRoLuyKe - chiPhiDuPhongRuiRoTinDungLuyKe;
 
                 var thuNhapChiuThueLuyKe = loiNhuanTruocThueLuyKe;
 
@@ -308,6 +448,7 @@ namespace ReportWebApplication.Controllers
                 excelSheet.Cells["D36"].Value = Format(laiLoThuanTuHoatDongKhac);
 
                 excelSheet.Cells["D37"].Value = Format(chiNopThueVaCacKhoanPhi);
+                excelSheet.Cells["D38"].Value = Format(chiPhiChoNhanVien);
                 excelSheet.Cells["D39"].Value = Format(chiLuongVaPhucap);
                 excelSheet.Cells["D40"].Value = Format(cacKhoanChiDongGopTheoLuong);
                 excelSheet.Cells["D41"].Value = Format(chiTroCap);
@@ -363,6 +504,7 @@ namespace ReportWebApplication.Controllers
                 excelSheet.Cells["E36"].Value = Format(laiLoThuanTuHoatDongKhacLuyKe);
 
                 excelSheet.Cells["E37"].Value = Format(chiNopThueVaCacKhoanPhiLuyKe);
+                excelSheet.Cells["D38"].Value = Format(chiPhiChoNhanVienLuyKe);                
                 excelSheet.Cells["E39"].Value = Format(chiLuongVaPhucapLuyKe);
                 excelSheet.Cells["E40"].Value = Format(cacKhoanChiDongGopTheoLuongLuyKe);
                 excelSheet.Cells["E41"].Value = Format(chiTroCapLuyKe);

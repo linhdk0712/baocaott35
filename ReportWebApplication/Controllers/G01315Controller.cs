@@ -125,9 +125,14 @@ namespace ReportWebApplication.Controllers
                 var _631duNo = bangCanDoiKeToan.Where(x => x.F03 == "631" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
                 var _64duNo = bangCanDoiKeToan.Where(x => x.F03 == "64" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
-                             
-                var _2191duCo = bangCanDoiKeToan.Where(x => x.F03 == "2191" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
-                var _2192duCo = bangCanDoiKeToan.Where(x => x.F03 == "2192" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
+                // 2191             
+                var _2191duCoDauKy = bangCanDoiKeToan.Where(x => x.F03 == "2191" && x.F10 == maChiNhanh).Select(x => x.F05).FirstOrDefault();
+                var _2191phatSinhCo = bangCanDoiKeToan.Where(x => x.F03 == "2191" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _2191phatSinhNo = bangCanDoiKeToan.Where(x => x.F03 == "2191" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
+                // 2192
+                var _2192duCoDauKy = bangCanDoiKeToan.Where(x => x.F03 == "2192" && x.F10 == maChiNhanh).Select(x => x.F05).FirstOrDefault();
+                var _2192phatSinhCo = bangCanDoiKeToan.Where(x => x.F03 == "2192" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _2192phatSinhNo = bangCanDoiKeToan.Where(x => x.F03 == "2192" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
 
                 var _3051duCo = bangCanDoiKeToan.Where(x => x.F03 == "3051" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
                 var _3052duCo = bangCanDoiKeToan.Where(x => x.F03 == "3052" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
@@ -158,6 +163,7 @@ namespace ReportWebApplication.Controllers
                 var _609duCo = bangCanDoiKeToan.Where(x => x.F03 == "609" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
 
                 var _61duCo = bangCanDoiKeToan.Where(x => x.F03 == "61" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
+                var _62duCo = bangCanDoiKeToan.Where(x => x.F03 == "62" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
 
                 var _631duCo = bangCanDoiKeToan.Where(x => x.F03 == "631" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
 
@@ -220,12 +226,12 @@ namespace ReportWebApplication.Controllers
                 var choVayKhachHangTcvm = _20duNo;
                 var duNoTheoDoiTuongKhachHang = choVayKhachHangTcvm;
 
-                var duPhongChungTrichLapTrongKy = _2192duCo;
-                var duPhongChungSuDungTrongKy = _2192duCo;
+                var duPhongChungTrichLapTrongKy = -_2192duCoDauKy - _2192phatSinhCo;
+                var duPhongChungSuDungTrongKy = _2192phatSinhNo;
                 var duPhongChungTong = duPhongChungTrichLapTrongKy + duPhongChungSuDungTrongKy;
 
-                var duPhongCuTheTrichLapTrongKy = _2191duNo;
-                var duPhongCuTheSuDungTrongKy = _2191duCo;
+                var duPhongCuTheTrichLapTrongKy = -_2191duCoDauKy - _2191phatSinhCo;//-------------------------------------
+                var duPhongCuTheSuDungTrongKy = _2191phatSinhNo;
                 var duPhongCuTheTong = duPhongCuTheSuDungTrongKy + duPhongCuTheTrichLapTrongKy;
 
                 var duPhongRuiRoChoVayKhachHang = duPhongChungTong + duPhongCuTheTong;
@@ -233,14 +239,14 @@ namespace ReportWebApplication.Controllers
                 var choVayKhachHang = choVayToChucCaNhanTrongNuoc + duPhongRuiRoChoVayKhachHang ;
 
                 var nguyenGiaTscdHuuHinh = _301duNo;
-                var haoMonTscdHuuHinh = _3051duCo;
+                var haoMonTscdHuuHinh = -_3051duCo;
                 var taiSanCoDinhHuuHinh = nguyenGiaTscdHuuHinh + haoMonTscdHuuHinh;
 
                 var taiSanCoDinhThueTaiChinh = _303duNo;
 
                 var nguyenGiaTscdVoHinh = _302duNo;
-                var haoMonTscdVoHinh = _3052duCo;
-                var taSanCoDinhVoHinh = nguyenGiaTscdVoHinh - haoMonTscdVoHinh;
+                var haoMonTscdVoHinh = -_3052duCo;
+                var taSanCoDinhVoHinh = nguyenGiaTscdVoHinh + haoMonTscdVoHinh;
 
                 var taiSanCoDinh = taiSanCoDinhHuuHinh + taiSanCoDinhThueTaiChinh + taSanCoDinhVoHinh;
 
@@ -274,7 +280,7 @@ namespace ReportWebApplication.Controllers
 
                 var noKhacLaiPhiPhaiTra = _49duCo;
                 var noKhacThueTndn = _4535duCo;
-                var noKhacCongNoPhaiTra = _45duCo - _4535duCo + _46duCo - _466duCo + _48duCo;
+                var noKhacCongNoPhaiTra = _45duCo - _4535duCo + _46duCo - _466duCo + _48duCo + _62duCo;
 
                 var quyKhenThuongPhucLoi = _484duCo;
                 var cacKhoanNoKhac = noKhacLaiPhiPhaiTra + noKhacThueTndn + noKhacCongNoPhaiTra + quyKhenThuongPhucLoi;
