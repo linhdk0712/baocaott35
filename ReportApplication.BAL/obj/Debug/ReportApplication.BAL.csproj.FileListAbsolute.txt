@@ -33,3 +33,24 @@ E:\My Projects\ReportApplication-master\SourceCodes\ReportApplication.BAL\bin\De
 E:\My Projects\ReportApplication-master\SourceCodes\ReportApplication.BAL\bin\Debug\MongoDB.Bson.xml
 E:\My Projects\ReportApplication-master\SourceCodes\ReportApplication.BAL\bin\Debug\MongoDB.Driver.xml
 E:\My Projects\ReportApplication-master\SourceCodes\ReportApplication.BAL\bin\Debug\MongoDB.Driver.Core.xml
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.BAL\bin\Debug\ReportApplication.BAL.dll.config
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.BAL\bin\Debug\ReportApplication.BAL.dll
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.BAL\bin\Debug\ReportApplication.BAL.pdb
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.BAL\bin\Debug\Dapper.dll
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.BAL\bin\Debug\EntityFramework.dll
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.BAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.BAL\bin\Debug\MongoDB.Bson.dll
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.BAL\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.BAL\bin\Debug\MongoDB.Driver.dll
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.BAL\bin\Debug\ReportApplication.DAL.dll
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.BAL\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.BAL\bin\Debug\ReportApplication.DAL.pdb
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.BAL\bin\Debug\Dapper.xml
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.BAL\bin\Debug\EntityFramework.xml
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.BAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.BAL\bin\Debug\MongoDB.Bson.xml
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.BAL\bin\Debug\MongoDB.Driver.xml
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.BAL\bin\Debug\MongoDB.Driver.Core.xml
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.BAL\obj\Debug\ReportApplication.BAL.csprojResolveAssemblyReference.cache
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.BAL\obj\Debug\ReportApplication.BAL.dll
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.BAL\obj\Debug\ReportApplication.BAL.pdb

@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace ReportWebApplication.Commons
 {
@@ -36,6 +33,6 @@ namespace ReportWebApplication.Commons
                 dtReturn[2] = new DateTime(dtNow.Year, 12, 31);
             }
             return dtReturn;
-        }        
+        }
     }
 }

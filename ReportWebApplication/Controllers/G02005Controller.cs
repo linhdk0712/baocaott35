@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using OfficeOpenXml;
 using ReportApplication.BAL;
 using ReportApplication.Common;
 using ReportWebApplication.Commons;
+using System;
+using System.Globalization;
 using System.IO;
-using OfficeOpenXml;
+using System.Linq;
+using System.Web.Mvc;
 
 namespace ReportWebApplication.Controllers
 {
@@ -17,25 +15,36 @@ namespace ReportWebApplication.Controllers
         private readonly string _reportName = clsControllerName.ControllerName();
         private readonly decimal _dviTinhs = ClsDonViTinh.DviTinhTrieuDong();
         private readonly ClsBangCanDoiTaiKhoanKeToan _clsBangCanDoiTaiKhoanKeToan;
+
         public G02005Controller()
         {
-         _clsBangCanDoiTaiKhoanKeToan = new ClsBangCanDoiTaiKhoanKeToan();       
+            _clsBangCanDoiTaiKhoanKeToan = new ClsBangCanDoiTaiKhoanKeToan();
         }
-         [HttpGet]
+
+        [HttpGet]
         public JsonResult GetXLSXReport(string denNgay)
         {
             var dinhKyBaoCao = _clsDinhKyBaoCao.DinhKyBaoCao(_reportName);
             var status = false;
             var reportCount = 0;
+            // các ngày trong quý
             var dtFirstEndOfQuarter = clsDatesOfQuarter.DatesOfQuarter(denNgay);
+            // Ngày đầu quý
             var startDateOfQuater = dtFirstEndOfQuarter[0];
-            var endDateOfPrevQuater = startDateOfQuater.AddDays(-1).ToString("yyyyMMdd");
+            // Ngày cuối quý trước
+            var endDateOfPrevQuater = startDateOfQuater.AddDays(-1);
+            // Các ngày trong quý trước
+            var daysInPrevQuater = clsDatesOfQuarter.DatesOfQuarter(endDateOfPrevQuater.ToString());
+            // Ngày cuối quý trước nữa
+            var endDateOfPrevPrevQuater = daysInPrevQuater[0].AddDays(-1);
+            // Ngày cuối quý này
             var endDateOfQuarter = dtFirstEndOfQuarter[2].ToString("yyyyMMdd");
             // tạo folder theo tháng
             var folderName = GetFolderName(denNgay, _reportName);
             //-----------------------------------------------------------------------------------------------------
-            var bangCanDoiKeToan = _clsBangCanDoiTaiKhoanKeToan.GetAllData(endDateOfQuarter);  
-            var bangCanDoiKeToanKyTruoc = _clsBangCanDoiTaiKhoanKeToan.GetAllData(endDateOfPrevQuater);
+            var bangCanDoiKeToan = _clsBangCanDoiTaiKhoanKeToan.GetAllData(endDateOfQuarter);
+            var bangCanDoiKeToanKyTruoc = _clsBangCanDoiTaiKhoanKeToan.GetAllData(endDateOfPrevQuater.ToString("yyyyMMdd"));
+            var bangCanDoiKeToanKyTruocNua = _clsBangCanDoiTaiKhoanKeToan.GetAllData(endDateOfPrevPrevQuater.ToString("yyyyMMdd"));
             //-----------------------------------------------------------------------------------------------------
             var phamViBaoCao = _clsSoLieuToanHeThongVaDonVi.BaoCaoToanHeThongOrTruSoChinh(_reportName);
             foreach (var machinhanh in phamViBaoCao)
@@ -53,75 +62,80 @@ namespace ReportWebApplication.Controllers
                 var setNgayBaoCao = _createFileNameReport.NgayBaoCao(denNgay);
                 var excelSheet = exPackage.Workbook.Worksheets[1];
                 _setFileName.SetFileNameReport(fileName + ".xlsx", _maDonViGui,
-                  clsMaDonViPhatSinh.GetMaNganHang(maDviPsinhDlieu), setNgayBaoCao, _user, excelSheet);               
-                //-------------------------------------------------------------------------------------------                
+                  clsMaDonViPhatSinh.GetMaNganHang(maDviPsinhDlieu), setNgayBaoCao, _user, excelSheet);
+                //-------------------------------------------------------------------------------------------
 
                 #region Số liệu kỳ này
 
-                var _851phatSinhNo = bangCanDoiKeToan.Where(x => x.F03 == "851" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
-                var _851phatSinhCo = bangCanDoiKeToan.Where(x => x.F03 == "851" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _851duNoDauKy = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "851" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _851duNoCuoiKy = bangCanDoiKeToan.Where(x => x.F03 == "851" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
-                var _853phatSinhNo = bangCanDoiKeToan.Where(x => x.F03 == "853" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
-                var _853phatSinhCo = bangCanDoiKeToan.Where(x => x.F03 == "853" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _853duNoDauKy = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "853" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _853duNoCuoiKy = bangCanDoiKeToan.Where(x => x.F03 == "853" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
-                var _854phatSinhNo = bangCanDoiKeToan.Where(x => x.F03 == "854" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
-                var _854phatSinhCo = bangCanDoiKeToan.Where(x => x.F03 == "854" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _854duNoDauKy = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "854" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _854duNoCuoiKy = bangCanDoiKeToan.Where(x => x.F03 == "854" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
-                var _852phatSinhNo = bangCanDoiKeToan.Where(x => x.F03 == "852" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
-                var _852phatSinhCo = bangCanDoiKeToan.Where(x => x.F03 == "852" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _852duNoDauKy = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "852" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _852duNoCuoiKy = bangCanDoiKeToan.Where(x => x.F03 == "852" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
-                var _856phatSinhNo = bangCanDoiKeToan.Where(x => x.F03 == "856" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
-                var _856phatSinhCo = bangCanDoiKeToan.Where(x => x.F03 == "856" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _856duNoDauKy = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "856" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _856duNoCuoiKy = bangCanDoiKeToan.Where(x => x.F03 == "856" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
-                var _87phatSinhNo = bangCanDoiKeToan.Where(x => x.F03 == "87" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
-                var _87phatSinhCo = bangCanDoiKeToan.Where(x => x.F03 == "87" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _87duNoDauKy = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "87" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _87duNoCuoiKy = bangCanDoiKeToan.Where(x => x.F03 == "87" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
-                var _871phatSinhNo = bangCanDoiKeToan.Where(x => x.F03 == "871" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
-                var _871phatSinhCo = bangCanDoiKeToan.Where(x => x.F03 == "871" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _871duNoDauKy = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "871" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _871duNoCuoiKy = bangCanDoiKeToan.Where(x => x.F03 == "871" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
-                var _86phatSinhNo = bangCanDoiKeToan.Where(x => x.F03 == "86" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
-                var _86phatSinhCo = bangCanDoiKeToan.Where(x => x.F03 == "86" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _86duNoDauKy = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "86" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _86duNoCuoiKy = bangCanDoiKeToan.Where(x => x.F03 == "86" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
-                var _862phatSinhNo = bangCanDoiKeToan.Where(x => x.F03 == "862" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
-                var _862phatSinhCo = bangCanDoiKeToan.Where(x => x.F03 == "862" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _862duNoDauKy = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "862" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _862duNoCuoiKy = bangCanDoiKeToan.Where(x => x.F03 == "862" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
-                var _868phatSinhNo = bangCanDoiKeToan.Where(x => x.F03 == "868" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
-                var _868phatSinhCo = bangCanDoiKeToan.Where(x => x.F03 == "868" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _868duNoDauKy = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "868" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _868duNoCuoiKy = bangCanDoiKeToan.Where(x => x.F03 == "868" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
-                var _883phatSinhNo = bangCanDoiKeToan.Where(x => x.F03 == "883" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
-                var _883phatSinhCo = bangCanDoiKeToan.Where(x => x.F03 == "883" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _883duNoDauKy = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "883" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _883duNoCuoiKy = bangCanDoiKeToan.Where(x => x.F03 == "883" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
-                var _882phatSinhNo = bangCanDoiKeToan.Where(x => x.F03 == "882" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
-                var _882phatSinhCo = bangCanDoiKeToan.Where(x => x.F03 == "882" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _882duNoDauKy = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "882" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _882duNoCuoiKy = bangCanDoiKeToan.Where(x => x.F03 == "882" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
-                var _8822phatSinhNo = bangCanDoiKeToan.Where(x => x.F03 == "8822" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
-                var _8822phatSinhCo = bangCanDoiKeToan.Where(x => x.F03 == "8822" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _8822duNoDauKy = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "8822" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _8822duNoCuoiKy = bangCanDoiKeToan.Where(x => x.F03 == "8822" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
-                var _89phatSinhNo = bangCanDoiKeToan.Where(x => x.F03 == "89" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
-                var _89phatSinhCo = bangCanDoiKeToan.Where(x => x.F03 == "89" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _89duNoDauKy = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "89" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _89duNoCuoiKy = bangCanDoiKeToan.Where(x => x.F03 == "89" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
                 var tongSoCanBoNVien = 108;
-               
+
                 var _8512duCo = bangCanDoiKeToan.Where(x => x.F03 == "8512" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
 
-                var luongVaPhuCap = _851phatSinhNo - _851phatSinhCo;
-                var chiDongGop = _853phatSinhNo - _853phatSinhCo;
-                var chiTroCap = _854phatSinhNo - _854phatSinhCo;
-                var chiKhacChoNhanVien = _852phatSinhNo + _856phatSinhNo - _852phatSinhCo - _856phatSinhCo;
+                var luongVaPhuCap = -_851duNoDauKy + _851duNoCuoiKy;
+
+                var chiDongGop = -_853duNoDauKy + _853duNoCuoiKy;
+
+                var chiTroCap = -_854duNoDauKy + _854duNoCuoiKy;
+
+                var chiKhacChoNhanVien = -_852duNoDauKy - _856duNoDauKy + _852duNoCuoiKy + _856duNoCuoiKy;
+
                 var chiPhiChoNhanVien = luongVaPhuCap + chiDongGop + chiTroCap + chiKhacChoNhanVien;
 
-                var chiVeTaiSan = _87phatSinhNo - _87phatSinhCo;
+                var chiVeTaiSan = -_87duNoDauKy + _87duNoCuoiKy;
 
-                var khauHaoTscd = _871phatSinhNo - _871phatSinhCo;
-                var chiChoHoatDongQuanLyCongVu = _86phatSinhNo - _86phatSinhCo;
+                var khauHaoTscd = -_871duNoDauKy + _871duNoCuoiKy;
 
-                var congTacPhi = _862phatSinhNo - _862phatSinhCo;
-                var chiHoatDongDoanThe = _868phatSinhNo - _868phatSinhCo;
-                var chiNopPhiBaoHiem = _883phatSinhNo - _883phatSinhCo;
+                var chiChoHoatDongQuanLyCongVu = -_86duNoDauKy + _86duNoCuoiKy;
 
-                var chiPhiDuPhong = _882phatSinhNo - _882phatSinhCo - _8822phatSinhNo + _8822phatSinhCo;
+                var congTacPhi = -_862duNoDauKy + _862duNoCuoiKy;
+                var chiHoatDongDoanThe = -_868duNoDauKy + _868duNoCuoiKy;
+                var chiNopPhiBaoHiem = -_883duNoDauKy + _883duNoCuoiKy;
 
-                var chiPhiHoatDongKhac = _89phatSinhNo - _89phatSinhCo;
+                var chiPhiDuPhong = -_882duNoDauKy + _882duNoCuoiKy - _8822duNoDauKy + _8822duNoCuoiKy;
+
+                var chiPhiHoatDongKhac = -_89duNoDauKy + _89duNoCuoiKy;
 
                 var tongChiPhi = chiPhiChoNhanVien + chiVeTaiSan + chiChoHoatDongQuanLyCongVu + chiNopPhiBaoHiem +
                                  chiPhiDuPhong + chiPhiHoatDongKhac;
@@ -137,73 +151,81 @@ namespace ReportWebApplication.Controllers
 
                 var thuNhapBinhQuan = tongThuNhap / tongSoCanBoNVien;
 
-                #endregion
+                #endregion Số liệu kỳ này
 
                 #region Số liệu kỳ trước
 
-                var _851phatSinhNoKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "851" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
-                var _851phatSinhCoKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "851" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _851duNoDauKyKyTruoc = bangCanDoiKeToanKyTruocNua.Where(x => x.F03 == "851" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _851duNoCuoiKyKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "851" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
-                var _853phatSinhNoKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "853" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
-                var _853phatSinhCoKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "853" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _853duNoDauKyKyTruoc = bangCanDoiKeToanKyTruocNua.Where(x => x.F03 == "853" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _853duNoCuoiKyKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "853" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
-                var _854phatSinhNoKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "854" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
-                var _854phatSinhCoKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "854" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _854duNoDauKyKyTruoc = bangCanDoiKeToanKyTruocNua.Where(x => x.F03 == "854" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _854duNoCuoiKyKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "854" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
-                var _852phatSinhNoKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "852" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
-                var _852phatSinhCoKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "852" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _852duNoDauKyKyTruoc = bangCanDoiKeToanKyTruocNua.Where(x => x.F03 == "852" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _852duNoCuoiKyKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "852" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
-                var _856phatSinhNoKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "856" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
-                var _856phatSinhCoKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "856" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _856duNoDauKyKyTruoc = bangCanDoiKeToanKyTruocNua.Where(x => x.F03 == "856" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _856duNoCuoiKyKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "856" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
-                var _87phatSinhNoKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "87" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
-                var _87phatSinhCoKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "87" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _87duNoDauKyKyTruoc = bangCanDoiKeToanKyTruocNua.Where(x => x.F03 == "87" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _87duNoCuoiKyKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "87" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
-                var _871phatSinhNoKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "871" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
-                var _871phatSinhCoKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "871" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _871duNoDauKyKyTruoc = bangCanDoiKeToanKyTruocNua.Where(x => x.F03 == "871" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _871duNoCuoiKyKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "871" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
-                var _86phatSinhNoKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "86" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
-                var _86phatSinhCoKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "86" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _86duNoDauKyKyTruoc = bangCanDoiKeToanKyTruocNua.Where(x => x.F03 == "86" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _86duNoCuoiKyKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "86" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
-                var _862phatSinhNoKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "862" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
-                var _862phatSinhCoKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "862" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _862duNoDauKyKyTruoc = bangCanDoiKeToanKyTruocNua.Where(x => x.F03 == "862" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _862duNoCuoiKyKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "862" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
-                var _868phatSinhNoKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "868" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
-                var _868phatSinhCoKyTruoc = bangCanDoiKeToan.Where(x => x.F03 == "868" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _868duNoDauKyKyTruoc = bangCanDoiKeToanKyTruocNua.Where(x => x.F03 == "868" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _868duNoCuoiKyKyTruoc = bangCanDoiKeToan.Where(x => x.F03 == "868" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
-                var _883phatSinhNoKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "883" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
-                var _883phatSinhCoKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "883" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _883duNoDauKyKyTruoc = bangCanDoiKeToanKyTruocNua.Where(x => x.F03 == "883" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _883duNoCuoiKyKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "883" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
-                var _882phatSinhNoKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "882" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
-                var _882phatSinhCoKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "882" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _882duNoDauKyKyTruoc = bangCanDoiKeToanKyTruocNua.Where(x => x.F03 == "882" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _882duNoCuoiKyKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "882" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
-                var _8822phatSinhNoKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "8822" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
-                var _8822phatSinhCoKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "8822" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _8822duNoDauKyKyTruoc = bangCanDoiKeToanKyTruocNua.Where(x => x.F03 == "8822" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _8822duNoCuoiKyKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "8822" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
-                var _89phatSinhNoKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "89" && x.F10 == maChiNhanh).Select(x => x.F06).FirstOrDefault();
-                var _89phatSinhCoKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "89" && x.F10 == maChiNhanh).Select(x => x.F07).FirstOrDefault();
+                var _89duNoDauKyKyTruoc = bangCanDoiKeToanKyTruocNua.Where(x => x.F03 == "89" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _89duNoCuoiKyKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "89" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
                 const int tongSoCanBoNVienKyTruoc = 108;
 
                 var _8512duCoKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "8512" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
 
-                var luongVaPhuCapKyTruoc = _851phatSinhNoKyTruoc - _851phatSinhCoKyTruoc;
-                var chiDongGopKyTruoc = _853phatSinhNoKyTruoc - _853phatSinhCoKyTruoc;
-                var chiTroCapKyTruoc = _854phatSinhNoKyTruoc - _854phatSinhCoKyTruoc;
-                var chiKhacChoNhanVienKyTruoc = _852phatSinhNoKyTruoc + _856phatSinhNoKyTruoc - _852phatSinhCoKyTruoc - _856phatSinhCoKyTruoc;
+                var luongVaPhuCapKyTruoc = -_851duNoDauKyKyTruoc + _851duNoCuoiKyKyTruoc;
+
+                var chiDongGopKyTruoc = -_853duNoDauKyKyTruoc + _853duNoCuoiKyKyTruoc;
+
+                var chiTroCapKyTruoc = -_854duNoDauKyKyTruoc + _854duNoCuoiKyKyTruoc;
+
+                var chiKhacChoNhanVienKyTruoc = -_852duNoDauKyKyTruoc - _856duNoDauKyKyTruoc + _852duNoCuoiKyKyTruoc + _856duNoCuoiKyKyTruoc;
+
                 var chiPhiChoNhanVienKyTruoc = luongVaPhuCapKyTruoc + chiDongGopKyTruoc + chiTroCapKyTruoc + chiKhacChoNhanVienKyTruoc;
 
-                var chiVeTaiSanKyTruoc = _87phatSinhNoKyTruoc - _87phatSinhCoKyTruoc;
-                var khauHaoTscdKyTruoc = _871phatSinhNoKyTruoc - _871phatSinhCoKyTruoc;
-                var chiChoHoatDongQuanLyCongVuKyTruoc = _86phatSinhNoKyTruoc - _86phatSinhCoKyTruoc;
+                var chiVeTaiSanKyTruoc = -_87duNoDauKyKyTruoc + _87duNoCuoiKyKyTruoc;
 
-                var congTacPhiKyTruoc = _862phatSinhNoKyTruoc - _862phatSinhCoKyTruoc;
-                var chiHoatDongDoanTheKyTruoc = _868phatSinhNoKyTruoc - _868phatSinhCoKyTruoc;
-                var chiNopPhiBaoHiemKyTruoc = _883phatSinhNoKyTruoc - _883phatSinhCoKyTruoc;
+                var khauHaoTscdKyTruoc = -_871duNoDauKyKyTruoc + _871duNoCuoiKyKyTruoc;
 
-                var chiPhiDuPhongKyTruoc = _882phatSinhNoKyTruoc - _882phatSinhCoKyTruoc - _8822phatSinhNoKyTruoc + _8822phatSinhCoKyTruoc;
+                var chiChoHoatDongQuanLyCongVuKyTruoc = -_86duNoDauKyKyTruoc + _86duNoCuoiKyKyTruoc;
 
-                var chiPhiHoatDongKhacKyTruoc = _89phatSinhNoKyTruoc - _89phatSinhCoKyTruoc;
+                var congTacPhiKyTruoc = -_862duNoDauKyKyTruoc + _862duNoCuoiKyKyTruoc;
+
+                var chiHoatDongDoanTheKyTruoc = -_868duNoDauKyKyTruoc + _868duNoCuoiKyKyTruoc;
+
+                var chiNopPhiBaoHiemKyTruoc = -_883duNoDauKyKyTruoc + _883duNoCuoiKyKyTruoc;
+
+                var chiPhiDuPhongKyTruoc = -_882duNoDauKyKyTruoc + _882duNoCuoiKyKyTruoc - _8822duNoDauKyKyTruoc + _8822duNoCuoiKyKyTruoc;
+
+                var chiPhiHoatDongKhacKyTruoc = -_89duNoDauKyKyTruoc + _89duNoCuoiKyKyTruoc;
 
                 var tongChiPhiKyTruoc = chiPhiChoNhanVienKyTruoc + chiVeTaiSanKyTruoc + chiChoHoatDongQuanLyCongVuKyTruoc + chiNopPhiBaoHiemKyTruoc +
                                  chiPhiDuPhongKyTruoc + chiPhiHoatDongKhacKyTruoc;
@@ -211,6 +233,7 @@ namespace ReportWebApplication.Controllers
                 var tongQuyLuongKyTruoc = luongVaPhuCapKyTruoc - _8512duCoKyTruoc;
 
                 const int tienThuongKyTruoc = 0;
+
                 const int thuNhapKhacKyTruoc = 0;
 
                 var tongThuNhapKyTruoc = tongQuyLuongKyTruoc + tienThuongKyTruoc + thuNhapKhacKyTruoc;
@@ -219,7 +242,7 @@ namespace ReportWebApplication.Controllers
 
                 var thuNhapBinhQuanKyTruoc = tongThuNhapKyTruoc / tongSoCanBoNVienKyTruoc;
 
-                #endregion
+                #endregion Số liệu kỳ trước
 
                 excelSheet.Cells["C20"].Value = Format(chiPhiChoNhanVien);
                 excelSheet.Cells["C21"].Value = Format(luongVaPhuCap);
@@ -290,6 +313,5 @@ namespace ReportWebApplication.Controllers
             return string.Format(CultureInfo.CreateSpecificCulture("da-DK"),
                         "{0:00.0}", Math.Round(data / _dviTinhs, 1));
         }
-       
     }
 }
