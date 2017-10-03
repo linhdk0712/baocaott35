@@ -525,7 +525,6 @@ C:\Users\LINH\Source\Repos\SourceCodes\ReportWpfApplication\bin\Debug\DevExpress
 C:\Users\LINH\Source\Repos\SourceCodes\ReportWpfApplication\bin\Debug\EntityFramework.xml
 C:\Users\LINH\Source\Repos\SourceCodes\ReportWpfApplication\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\LINH\Source\Repos\SourceCodes\ReportWpfApplication\bin\Debug\EPPlus.xml
-C:\Users\LINH\Source\Repos\SourceCodes\ReportWpfApplication\bin\Debug\NPOI.xml
 C:\Users\LINH\Source\Repos\SourceCodes\ReportWpfApplication\bin\Debug\Dapper.xml
 C:\Users\LINH\Source\Repos\SourceCodes\ReportWpfApplication\bin\Debug\DevExpress.XtraLayout.v16.1.xml
 C:\Users\LINH\Source\Repos\SourceCodes\ReportWpfApplication\bin\Debug\DevExpress.XtraGrid.v16.1.xml

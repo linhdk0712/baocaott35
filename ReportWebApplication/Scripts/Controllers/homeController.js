@@ -28,8 +28,13 @@ var homeController = {
                 homeController.loadListFile();
             });
             $('#datasysn').off('click').on('click', function () {
-                homeController.tonghopdulieu();
+                var url = '/Home/TongHopDuLieu';
+                homeController.tonghopdulieu(url);
             });
+            $('#datasysnOfQuater').off('click').on('click', function () {
+                var url = '/Home/TongHopDuLieuQuy';
+                homeController.tonghopdulieu(url);
+            })
 
             $('#search.typeahead').typeahead({
                 hint: true,
@@ -108,14 +113,14 @@ var homeController = {
             }
         })
     },
-    tonghopdulieu: function () {
+    tonghopdulieu: function (url) {
         var ngaydulieu = $('[name="dateNgayPsinhDlieu"]').val();
         if (!ngaydulieu.length) {
             alert("Phải chọn ngày dữ liệu trước");
         }
         else {
             $.ajax({
-                url: '/Home/TongHopDuLieu',
+                url: url,
                 type: 'POST',
                 dataType: 'json',
                 data: {

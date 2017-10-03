@@ -89,26 +89,43 @@ namespace ReportWebApplication.Controllers
                 var tkCo30 = (from a in bangCanDoiKeToan where a.F03 == "30" && a.F10 == maChiNhanh select a.F09).FirstOrDefault();
                 //-------------------------------------------------------------------------------------------
                 var tienMatDaQuy = tk10;
+
                 var tienGuiNhnn = tk11;
+
                 var tienGuiToChucTinDung = tk13;
+
                 var choVayQuaHanDen3Thang =tk2112+tk2113+tk2122+tk2123;
+
                 var choVayQuaHanTren3Thang = tk2114 + tk2115 + tk2124 + tk2125;
+
                 var choVayTrongHanTu3Den12Thang = tk2111-tk21111;
+
                 var choVayTrongHan12Den60Thang = tk2121;
+
                 var choVayTongCong = choVayTrongHanTu3Den12Thang + choVayTrongHan12Den60Thang + choVayQuaHanDen3Thang + choVayQuaHanTren3Thang;
+
                 var taiSanCoDinhVaBds = tkNo30 - tkCo30;
 
                 var taiSanCoKhacDen1Thang = tk35 + tk36 - tk366;
+
                 var taiSanCoKhacTu3Den12Thang = tk31 + tk38;
+
                 var taiSanCoKhacTongCong = taiSanCoKhacDen1Thang + taiSanCoKhacTu3Den12Thang; 
 
                 var tongTaiSanQuaHan3Thang = choVayQuaHanDen3Thang;
+
                 var tongTaiSanQuaHanTren3Thang = choVayQuaHanTren3Thang;
+
                 var tongTaiSanTrongHanDen1Thang = tienMatDaQuy  + tienGuiToChucTinDung  + taiSanCoKhacDen1Thang;
+
                 const int tongTaiSanTrongHanTu1Den3Thang = 0;
+
                 var tongTaiSanTrongHanTuTren3Den12Thang = choVayTrongHanTu3Den12Thang + taiSanCoKhacTu3Den12Thang;
+
                 var tongTaiSanTrongHan12Den60Thang = choVayTrongHan12Den60Thang;
+
                 var tongTaiSanTren60Thang = taiSanCoDinhVaBds;
+
                 var tongTaiSanTongCong = tongTaiSanQuaHan3Thang + tongTaiSanQuaHanTren3Thang + tongTaiSanTrongHanDen1Thang + tongTaiSanTrongHanTuTren3Den12Thang + tongTaiSanTrongHan12Den60Thang + tongTaiSanTren60Thang;
 
                 var tienGuiDen1Thang = (from a in tienGui where a.MA_NHOM_SP == "T04" && a.KY_HAN <= 1 select a.SO_TIEN).Sum() + (from a in tienGui where a.MA_NHOM_SP == "T02" select a.SO_TIEN).Sum();

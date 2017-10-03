@@ -24,7 +24,7 @@ namespace ReportApplication.BAL.MongoDb
             _sqlConnection.Open();
         }
         // Thực hiện việc cập nhật dữ liệu vào ngày cuối cùng của tháng hoặc ngày 15 của tháng đầu tiên trong quý
-        public int BangCanDoiKeToan(string machinhanh,string tungay, string denngay)
+        public int BangCanDoiKeToan(string machinhanh,string tungay, string denngay,string loai = null)
         {
             var iCheck = 0;
             var param = new DynamicParameters();            
@@ -50,13 +50,24 @@ namespace ReportApplication.BAL.MongoDb
                 string.Format("{0}1231", date.Year)
             };
             if (!daysInMonth.Contains(denngay)) return iCheck;
-            const string queryCount = @"DELETE FROM dbo.M7_ACC_BALANCE_SHEET WHERE F10=@f10 AND F02 =@denNgay";
-            param.Add("@f10", machinhanh);
-            param.Add("@denNgay", denngay);
+            string queryCount = "";
+            if (string.IsNullOrEmpty(loai))
+            {
+                queryCount = @"DELETE FROM dbo.M7_ACC_BALANCE_SHEET WHERE F10=@f10 AND F02 =@denNgay";
+                param.Add("@f10", machinhanh);
+                param.Add("@denNgay", denngay);
+            }
+            else
+            {
+                queryCount = @"DELETE FROM dbo.M7_ACC_BALANCE_SHEET WHERE F10=@f10 AND F02 =@denNgay AND F11 = @loai";
+                param.Add("@f10", machinhanh);
+                param.Add("@denNgay", denngay);
+                param.Add("@loai", loai);
+            }        
             var result = _sqlConnection.Execute(queryCount, param, commandType: System.Data.CommandType.Text);            
             var source = new ClsBangCanDoiTaiKhoanKeToan().GetAllDataChiTiet(machinhanh,tungay, denngay);
-            const string queryInsert = @"INSERT INTO [dbo].[M7_ACC_BALANCE_SHEET] ([F01],[F02],[F03],[F04],[F05],[F06],[F07],[F08],[F09],[F10])
-                                                                          VALUES( @f01,@f02,@f03,@f04,@f05,@f06,@f07,@f08,@f09,@f10)";
+            const string queryInsert = @"INSERT INTO [dbo].[M7_ACC_BALANCE_SHEET] ([F01],[F02],[F03],[F04],[F05],[F06],[F07],[F08],[F09],[F10],[F11])
+                                                                          VALUES( @f01,@f02,@f03,@f04,@f05,@f06,@f07,@f08,@f09,@f10,@f11)";
             foreach (var item in source)
             {
                 param.Add("@f01", Guid.NewGuid());
@@ -69,6 +80,7 @@ namespace ReportApplication.BAL.MongoDb
                 param.Add("@f08", item.F08);
                 param.Add("@f09", item.F09);
                 param.Add("@f10", machinhanh);
+                param.Add("@f11", loai);
                 _sqlConnection.Execute(queryInsert, param, commandType: System.Data.CommandType.Text);
                 iCheck++;
             }

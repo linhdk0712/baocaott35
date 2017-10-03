@@ -24,3 +24,19 @@ E:\My Projects\ReportApplication-master\SourceCodes\ReportApplication.DAL\bin\De
 E:\My Projects\ReportApplication-master\SourceCodes\ReportApplication.DAL\bin\Debug\MongoDB.Bson.xml
 E:\My Projects\ReportApplication-master\SourceCodes\ReportApplication.DAL\bin\Debug\MongoDB.Driver.xml
 E:\My Projects\ReportApplication-master\SourceCodes\ReportApplication.DAL\bin\Debug\MongoDB.Driver.Core.xml
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.DAL\bin\Debug\ReportApplication.DAL.dll.config
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.DAL\bin\Debug\ReportApplication.DAL.dll
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.DAL\bin\Debug\ReportApplication.DAL.pdb
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.DAL\bin\Debug\EntityFramework.dll
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.DAL\bin\Debug\MongoDB.Bson.dll
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.DAL\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.DAL\bin\Debug\MongoDB.Driver.dll
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.DAL\bin\Debug\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.DAL\bin\Debug\EntityFramework.xml
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.DAL\bin\Debug\MongoDB.Bson.xml
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.DAL\bin\Debug\MongoDB.Driver.xml
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.DAL\bin\Debug\MongoDB.Driver.Core.xml
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.DAL\obj\Debug\ReportApplication.DAL.dll
+C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication.DAL\obj\Debug\ReportApplication.DAL.pdb

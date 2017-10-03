@@ -67,6 +67,9 @@ namespace ReportWebApplication.Controllers
 
                 #region Số liệu kỳ này
 
+                var _831duNoDauKy = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "831" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _831duNoCuoiKy = bangCanDoiKeToan.Where(x => x.F03 == "831" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var _851duNoDauKy = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "851" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
                 var _851duNoCuoiKy = bangCanDoiKeToan.Where(x => x.F03 == "851" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
@@ -109,9 +112,17 @@ namespace ReportWebApplication.Controllers
                 var _89duNoDauKy = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "89" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
                 var _89duNoCuoiKy = bangCanDoiKeToan.Where(x => x.F03 == "89" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
+                var _855duNoDauKy = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "855" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _855duNoCuoiKy = bangCanDoiKeToan.Where(x => x.F03 == "855" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
+                var _8511duNoDauKy = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "8511" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _8511duNoCuoiKy = bangCanDoiKeToan.Where(x => x.F03 == "8511" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 var tongSoCanBoNVien = 108;
 
                 var _8512duCo = bangCanDoiKeToan.Where(x => x.F03 == "8512" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
+
+                var chiNopThueVaCacKhoanPhi = _831duNoCuoiKy - _831duNoDauKy;
 
                 var luongVaPhuCap = -_851duNoDauKy + _851duNoCuoiKy;
 
@@ -133,14 +144,15 @@ namespace ReportWebApplication.Controllers
                 var chiHoatDongDoanThe = -_868duNoDauKy + _868duNoCuoiKy;
                 var chiNopPhiBaoHiem = -_883duNoDauKy + _883duNoCuoiKy;
 
-                var chiPhiDuPhong = -_882duNoDauKy + _882duNoCuoiKy - _8822duNoDauKy + _8822duNoCuoiKy;
+                var chiPhiDuPhong = (-_882duNoDauKy + _882duNoCuoiKy)-( - _8822duNoDauKy + _8822duNoCuoiKy);
+               
 
-                var chiPhiHoatDongKhac = -_89duNoDauKy + _89duNoCuoiKy;
+                var chiPhiHoatDongKhac = -_89duNoDauKy + _89duNoCuoiKy + _855duNoCuoiKy - _855duNoDauKy;
 
                 var tongChiPhi = chiPhiChoNhanVien + chiVeTaiSan + chiChoHoatDongQuanLyCongVu + chiNopPhiBaoHiem +
                                  chiPhiDuPhong + chiPhiHoatDongKhac;
 
-                var tongQuyLuong = luongVaPhuCap - _8512duCo;
+                var tongQuyLuong = _8511duNoCuoiKy - _8511duNoDauKy;
 
                 var tienThuong = 0;
                 var thuNhapKhac = 0;
@@ -154,6 +166,10 @@ namespace ReportWebApplication.Controllers
                 #endregion Số liệu kỳ này
 
                 #region Số liệu kỳ trước
+
+                var _831duNoDauKyKyTruoc = bangCanDoiKeToanKyTruocNua.Where(x => x.F03 == "831" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _831duNoCuoiKyKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "831" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
 
                 var _851duNoDauKyKyTruoc = bangCanDoiKeToanKyTruocNua.Where(x => x.F03 == "851" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
                 var _851duNoCuoiKyKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "851" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
@@ -183,7 +199,7 @@ namespace ReportWebApplication.Controllers
                 var _862duNoCuoiKyKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "862" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
                 var _868duNoDauKyKyTruoc = bangCanDoiKeToanKyTruocNua.Where(x => x.F03 == "868" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
-                var _868duNoCuoiKyKyTruoc = bangCanDoiKeToan.Where(x => x.F03 == "868" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _868duNoCuoiKyKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "868" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
                 var _883duNoDauKyKyTruoc = bangCanDoiKeToanKyTruocNua.Where(x => x.F03 == "883" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
                 var _883duNoCuoiKyKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "883" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
@@ -197,9 +213,17 @@ namespace ReportWebApplication.Controllers
                 var _89duNoDauKyKyTruoc = bangCanDoiKeToanKyTruocNua.Where(x => x.F03 == "89" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
                 var _89duNoCuoiKyKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "89" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
 
+                var _855duNoDauKyKyTruoc = bangCanDoiKeToanKyTruocNua.Where(x => x.F03 == "855" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _855duNoCuoiKyKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "855" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
+                var _8511duNoDauKyKyTruoc = bangCanDoiKeToanKyTruocNua.Where(x => x.F03 == "8511" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+                var _8511duNoCuoiKyKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "8511" && x.F10 == maChiNhanh).Select(x => x.F08).FirstOrDefault();
+
                 const int tongSoCanBoNVienKyTruoc = 108;
 
                 var _8512duCoKyTruoc = bangCanDoiKeToanKyTruoc.Where(x => x.F03 == "8512" && x.F10 == maChiNhanh).Select(x => x.F09).FirstOrDefault();
+
+                var chiNopThueVaCacKhoanPhiKyTruoc = _831duNoCuoiKyKyTruoc - _831duNoDauKyKyTruoc;
 
                 var luongVaPhuCapKyTruoc = -_851duNoDauKyKyTruoc + _851duNoCuoiKyKyTruoc;
 
@@ -223,14 +247,14 @@ namespace ReportWebApplication.Controllers
 
                 var chiNopPhiBaoHiemKyTruoc = -_883duNoDauKyKyTruoc + _883duNoCuoiKyKyTruoc;
 
-                var chiPhiDuPhongKyTruoc = -_882duNoDauKyKyTruoc + _882duNoCuoiKyKyTruoc - _8822duNoDauKyKyTruoc + _8822duNoCuoiKyKyTruoc;
+                var chiPhiDuPhongKyTruoc = (-_882duNoDauKyKyTruoc + _882duNoCuoiKyKyTruoc)-( - _8822duNoDauKyKyTruoc + _8822duNoCuoiKyKyTruoc);
 
-                var chiPhiHoatDongKhacKyTruoc = -_89duNoDauKyKyTruoc + _89duNoCuoiKyKyTruoc;
+                var chiPhiHoatDongKhacKyTruoc = -_89duNoDauKyKyTruoc + _89duNoCuoiKyKyTruoc - _855duNoDauKyKyTruoc + _855duNoCuoiKyKyTruoc;
 
                 var tongChiPhiKyTruoc = chiPhiChoNhanVienKyTruoc + chiVeTaiSanKyTruoc + chiChoHoatDongQuanLyCongVuKyTruoc + chiNopPhiBaoHiemKyTruoc +
                                  chiPhiDuPhongKyTruoc + chiPhiHoatDongKhacKyTruoc;
 
-                var tongQuyLuongKyTruoc = luongVaPhuCapKyTruoc - _8512duCoKyTruoc;
+                var tongQuyLuongKyTruoc =  _8511duNoCuoiKyKyTruoc - _8511duNoDauKyKyTruoc;
 
                 const int tienThuongKyTruoc = 0;
 
@@ -244,6 +268,7 @@ namespace ReportWebApplication.Controllers
 
                 #endregion Số liệu kỳ trước
 
+                excelSheet.Cells["C19"].Value = Format(chiNopThueVaCacKhoanPhi);
                 excelSheet.Cells["C20"].Value = Format(chiPhiChoNhanVien);
                 excelSheet.Cells["C21"].Value = Format(luongVaPhuCap);
                 excelSheet.Cells["C22"].Value = Format(chiDongGop);
@@ -269,6 +294,7 @@ namespace ReportWebApplication.Controllers
                 excelSheet.Cells["C43"].Value = Format(thuNhapBinhQuan);
 
                 //------------------------------------------------------------------------------------
+                excelSheet.Cells["D19"].Value = Format(chiNopThueVaCacKhoanPhiKyTruoc);
                 excelSheet.Cells["D20"].Value = Format(chiPhiChoNhanVienKyTruoc);
                 excelSheet.Cells["D21"].Value = Format(luongVaPhuCapKyTruoc);
                 excelSheet.Cells["D22"].Value = Format(chiDongGopKyTruoc);

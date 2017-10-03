@@ -19,6 +19,8 @@ namespace ReportApplication.BAL
         public decimal F08 { get; set; }
         public decimal F09 { get; set; }
         public string F10 { get; set; }
+
+        public string F11 { get; set; }
         /// <summary>
         ///
         /// </summary>
@@ -34,15 +36,16 @@ namespace ReportApplication.BAL
             _reportApplicationEntities?.Dispose();
         }
 
-        public IEnumerable<ClsBangCanDoiTaiKhoanKeToan> GetAllData(string denNgay, string maChiNhanh = null)
+        public IEnumerable<ClsBangCanDoiTaiKhoanKeToan> GetAllData(string denNgay, string maChiNhanh = null,string loai = null)
         {
             using (var sqlConnection = new SqlConnection(clsConnectionString.ConnectionString()))
             {
                 sqlConnection.Open();
-                const string queryGetData = @"SELECT [F02],[F03],[F04],[F05],[F06],[F07],[F08],[F09],[F10]
-                                            FROM [M7_ACC_BALANCE_SHEET] WHERE F02 = @denngay";
+                const string queryGetData = @"SELECT [F02],[F03],[F04],[F05],[F06],[F07],[F08],[F09],[F10],[F11]
+                                            FROM [M7_ACC_BALANCE_SHEET] WHERE F02 = @denngay AND F11 = @loai";
                 var param = new DynamicParameters();               
                 param.Add("@denngay", denNgay);
+                param.Add("@loai", loai);
                 return sqlConnection.Query<ClsBangCanDoiTaiKhoanKeToan>(queryGetData,param,commandType:System.Data.CommandType.Text,commandTimeout:1800);
             } 
           

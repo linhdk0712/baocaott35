@@ -148,6 +148,46 @@ namespace ReportWebApplication.Controllers
                 data = message + error
             }, JsonRequestBehavior.AllowGet);
         }
+        [HttpPost]
+        public JsonResult TongHopDuLieuQuy(string denNgay)
+        {
+            var check = false;
+            string message = null;
+            string error = null;           
+            var result = ClsKiemTrNgayLamViecDapper.CheckWorkingDate<ClsKiemTraNgayLamViecViewModel>();
+            var minDate = DateTime.Parse(result.Min(x => x.NGAY_LVIEC));
+            if (minDate > DateTime.Parse(denNgay))
+            {
+                // Ngày lấy dữ liệu
+                var ngayDuLieu = (DateTime.Parse(denNgay));              
+                var dateInQuater = clsDatesOfQuarter.DatesOfQuarter(denNgay);
+                var ngayDauQuy = dateInQuater[0];
+                var ngayCuoiQuy = dateInQuater[2];
+                try
+                {
+                    var clsMongoDb = new ClsMongoDb();
+                        var bangcandoi = clsMongoDb.BangCanDoiKeToan("00", ngayDauQuy.ToString("yyyyMMdd"), ngayCuoiQuy.ToString("yyyyMMdd"),"QuaterReport");
+                        if (bangcandoi > 0)
+                        {
+                            check = true;
+                        }        
+                    message = check ? @"Tổng hợp dữ liệu thành công" : @"Tổng hợp dữ liệu không thành công";
+                }
+                catch (Exception ex)
+                {
+                    error = ex.Message;
+                }
+            }
+            else
+            {
+                message = "Ngày tổng hợp dữ liệu không được lớn hơn ngày làm việc nhỏ nhất trong hệ thống";
+            }
+            return Json(new
+            {
+                status = check,
+                data = message + error
+            }, JsonRequestBehavior.AllowGet);
+        }
         [HttpGet]
         public JsonResult SearchResult()
         {

@@ -269,7 +269,6 @@ C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication\bin\Debug\DevExpress.Xt
 C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication\bin\Debug\EntityFramework.xml
 C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication\bin\Debug\EPPlus.xml
-C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication\bin\Debug\NPOI.xml
 C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication\bin\Debug\Dapper.xml
 C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication\bin\Debug\DevExpress.Pdf.v16.1.Core.xml
 C:\Users\LINH\Source\Repos\SourceCodes\ReportApplication\bin\Debug\DevExpress.RichEdit.v16.1.Core.xml
